@@ -137,10 +137,10 @@ function Hero() {
       {/* Background Image */}
       <div className="relative z-0">
         <img
-          src="/trex-hero.png"
-          alt="Hero Background"
-          className="w-full object-top object-contain sm:object-cover"
-        />
+  src="/trex-hero.jpg" // ← updated extension here
+  alt="Hero Background"
+  className="w-full object-top object-contain sm:object-cover"
+/>
         {/* Gradient Fade */}
         <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-32 bg-gradient-to-b from-transparent to-black z-10 pointer-events-none" />
       </div>
