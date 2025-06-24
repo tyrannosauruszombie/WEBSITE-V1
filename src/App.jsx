@@ -137,7 +137,7 @@ function Hero() {
       {/* Background Image */}
       <div className="relative z-0">
         <img
-  src="/trex-hero.jpg" // ← updated extension here
+  src="/trex-hero.jpg"
   alt="Hero Background"
   className="w-full object-top object-contain sm:object-cover"
 />
