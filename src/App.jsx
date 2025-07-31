@@ -11,6 +11,38 @@ export default function Portfolio() {
           title="AR PROMOS"
           description="Bringing VeVe’s incredible digital collectibles to life in augmented reality has been a truly unique adventure! Check out my promos for Marvel, Lucasfilm, Sesame Street and more!"
           videos={[
+
+            {
+  src: "https://www.youtube.com/embed/REh1in188Dg",
+  title: "Emily the Strange (Cosmic Debris)",
+  thumbnail: "/thumbnails/EMILY STRANGE.png",
+},
+{
+  src: "https://www.youtube.com/embed/O5tNo-Btel4",
+  title: "EMI (Tsuburaya Productions)",
+  thumbnail: "/thumbnails/KAIJU EMI.png",
+},
+{
+  src: "https://www.youtube.com/embed/5XB9Fc1AH7c",
+  title: "Maserati Alfieri (Maserati)",
+  thumbnail: "/thumbnails/MASERATI ALFIERI.png",
+},
+{
+  src: "https://www.youtube.com/embed/z36gu46aE0g",
+  title: "The Count (Sesame Street)",
+  thumbnail: "/thumbnails/THE COUNT.png",
+},
+{
+  src: "https://www.youtube.com/embed/CeRx-Wf0AMo",
+  title: "Ultraman (Tsuburaya Productions)",
+  thumbnail: "/thumbnails/ULTRAMAN.png",
+},
+{
+  src: "https://www.youtube.com/embed/xAISsdQDE5k",
+  title: "Winter Soldier (Marvel)",
+  thumbnail: "/thumbnails/WINTER SOLDIER.png",
+},
+
             {
               src: "https://www.youtube.com/embed/VSUEDsCkmBA",
               title: "Kawaii Princess Warriors (Tokidoki)",
