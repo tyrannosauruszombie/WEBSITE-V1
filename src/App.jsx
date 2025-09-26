@@ -7,42 +7,64 @@ export default function Portfolio() {
       <Hero />
 
       <main className="max-w-6xl mx-auto px-4 pt-0 pb-20 space-y-12">
-        <Section
+      
+          <Section
           title="AR PROMOS"
           description="Bringing VeVe’s incredible digital collectibles to life in augmented reality has been a truly unique adventure! Check out my promos for Marvel, Lucasfilm, Sesame Street and more!"
           videos={[
-
+            
             {
-  src: "https://www.youtube.com/embed/REh1in188Dg",
-  title: "Emily the Strange (Cosmic Debris)",
-  thumbnail: "/thumbnails/EMILY STRANGE.png",
-},
-{
-  src: "https://www.youtube.com/embed/O5tNo-Btel4",
-  title: "EMI (Tsuburaya Productions)",
-  thumbnail: "/thumbnails/KAIJU EMI.png",
-},
-{
-  src: "https://www.youtube.com/embed/5XB9Fc1AH7c",
-  title: "Maserati Alfieri (Maserati)",
-  thumbnail: "/thumbnails/MASERATI ALFIERI.png",
-},
-{
-  src: "https://www.youtube.com/embed/z36gu46aE0g",
-  title: "The Count (Sesame Street)",
-  thumbnail: "/thumbnails/THE COUNT.png",
-},
-{
-  src: "https://www.youtube.com/embed/CeRx-Wf0AMo",
-  title: "Ultraman (Tsuburaya Productions)",
-  thumbnail: "/thumbnails/ULTRAMAN.png",
-},
-{
-  src: "https://www.youtube.com/embed/xAISsdQDE5k",
-  title: "Winter Soldier (Marvel)",
-  thumbnail: "/thumbnails/WINTER SOLDIER.png",
-},
+              src: "https://www.youtube.com/embed/SkQvXUyHltY",
+              title: "Human Torch (Marvel)",
+              thumbnail: "/thumbnails/HUMAN TORCH.png",
+            },
+            {
+              src: "https://www.youtube.com/embed/_gkJQd7A2oQ",
+              title: "Edward Kenway (Ubisoft)",
+              thumbnail: "/thumbnails/EDWARD KENWAY.png",
+            },
+            {
+              src: "https://www.youtube.com/embed/0escAMEUJ5I",
+              title: "Darth Vader - Samurai (Lucasfilm)",
+              thumbnail: "/thumbnails/DARTH SAMURAI.png",
+            },
+            {
+              src: "https://www.youtube.com/embed/H7UJp-sJC8Y",
+              title: "Buzz Lightyear (Disney/Pixar)",
+              thumbnail: "/thumbnails/BUZZ LIGHTYEAR.png",
+            },
 
+            // Existing entries
+            {
+              src: "https://www.youtube.com/embed/REh1in188Dg",
+              title: "Emily the Strange (Cosmic Debris)",
+              thumbnail: "/thumbnails/EMILY STRANGE.png",
+            },
+            {
+              src: "https://www.youtube.com/embed/O5tNo-Btel4",
+              title: "EMI (Tsuburaya Productions)",
+              thumbnail: "/thumbnails/KAIJU EMI.png",
+            },
+            {
+              src: "https://www.youtube.com/embed/5XB9Fc1AH7c",
+              title: "Maserati Alfieri (Maserati)",
+              thumbnail: "/thumbnails/MASERATI ALFIERI.png",
+            },
+            {
+              src: "https://www.youtube.com/embed/z36gu46aE0g",
+              title: "The Count (Sesame Street)",
+              thumbnail: "/thumbnails/THE COUNT.png",
+            },
+            {
+              src: "https://www.youtube.com/embed/CeRx-Wf0AMo",
+              title: "Ultraman (Tsuburaya Productions)",
+              thumbnail: "/thumbnails/ULTRAMAN.png",
+            },
+            {
+              src: "https://www.youtube.com/embed/xAISsdQDE5k",
+              title: "Winter Soldier (Marvel)",
+              thumbnail: "/thumbnails/WINTER SOLDIER.png",
+            },
             {
               src: "https://www.youtube.com/embed/VSUEDsCkmBA",
               title: "Kawaii Princess Warriors (Tokidoki)",
@@ -83,11 +105,7 @@ export default function Portfolio() {
               title: "Cookie Monster (Sesame Street)",
               thumbnail: "/thumbnails/COOKIE.png",
             },
-            {
-              src: "https://www.youtube.com/embed/pk3LVd6WFi0",
-              title: "Kingpin (Marvel)",
-              thumbnail: "/thumbnails/KINGPIN.png",
-            },
+        
           ]}
         />
 
