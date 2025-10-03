@@ -14,25 +14,29 @@ export default function Portfolio() {
           videos={[
             
             {
-              src: "https://www.youtube.com/embed/SkQvXUyHltY",
-              title: "Human Torch (Marvel)",
-              thumbnail: "/thumbnails/HUMAN TORCH.png",
+              src: "https://www.youtube.com/embed/0escAMEUJ5I",
+              title: "Darth Vader - Samurai (Lucasfilm)",
+              thumbnail: "/thumbnails/DARTH SAMURAI.png",
             },
+
+             {
+              src: "https://www.youtube.com/embed/H7UJp-sJC8Y",
+              title: "Buzz Lightyear (Disney/Pixar)",
+              thumbnail: "/thumbnails/BUZZ LIGHTYEAR.png",
+            },
+           
             {
               src: "https://www.youtube.com/embed/_gkJQd7A2oQ",
               title: "Edward Kenway (Ubisoft)",
               thumbnail: "/thumbnails/EDWARD KENWAY.png",
             },
-            {
-              src: "https://www.youtube.com/embed/0escAMEUJ5I",
-              title: "Darth Vader - Samurai (Lucasfilm)",
-              thumbnail: "/thumbnails/DARTH SAMURAI.png",
+            
+             {
+              src: "https://www.youtube.com/embed/SkQvXUyHltY",
+              title: "Human Torch (Marvel)",
+              thumbnail: "/thumbnails/HUMAN TORCH.png",
             },
-            {
-              src: "https://www.youtube.com/embed/H7UJp-sJC8Y",
-              title: "Buzz Lightyear (Disney/Pixar)",
-              thumbnail: "/thumbnails/BUZZ LIGHTYEAR.png",
-            },
+           
 
             // Existing entries
             {
