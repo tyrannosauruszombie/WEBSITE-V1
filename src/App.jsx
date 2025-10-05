@@ -1,44 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
+import Navbar from "./Navbar";
 
 export default function Portfolio() {
   return (
-    <div className="bg-black text-white min-h-screen font-raleway">
-      <Hero />
+    <div className="bg-branddark text-white min-h-screen font-rubik">
+      {/* ✅ Fixed Navbar */}
+      <Navbar />
 
-      <main className="max-w-6xl mx-auto px-4 pt-0 pb-20 space-y-12">
-      
-          <Section
-          title="AR PROMOS"
-          description="Bringing VeVe’s incredible digital collectibles to life in augmented reality has been a truly unique adventure! Check out my promos for Marvel, Lucasfilm, Sesame Street and more!"
+      {/* ✅ Intro text replaces Hero */}
+      <IntroText />
+
+      {/* ✅ Unified video grid */}
+      <main className="w-full px-0 pt-0 pb-20">
+
+        <VideoGrid
           videos={[
-            
+            // --- AR PROMOS ---
             {
               src: "https://www.youtube.com/embed/0escAMEUJ5I",
               title: "Darth Vader - Samurai (Lucasfilm)",
               thumbnail: "/thumbnails/DARTH SAMURAI.png",
             },
-
-             {
+            {
               src: "https://www.youtube.com/embed/H7UJp-sJC8Y",
               title: "Buzz Lightyear (Disney/Pixar)",
               thumbnail: "/thumbnails/BUZZ LIGHTYEAR.png",
             },
-           
             {
               src: "https://www.youtube.com/embed/_gkJQd7A2oQ",
               title: "Edward Kenway (Ubisoft)",
               thumbnail: "/thumbnails/EDWARD KENWAY.png",
             },
-            
-             {
+            {
               src: "https://www.youtube.com/embed/SkQvXUyHltY",
               title: "Human Torch (Marvel)",
               thumbnail: "/thumbnails/HUMAN TORCH.png",
             },
-           
-
-            // Existing entries
             {
               src: "https://www.youtube.com/embed/REh1in188Dg",
               title: "Emily the Strange (Cosmic Debris)",
@@ -109,14 +107,8 @@ export default function Portfolio() {
               title: "Cookie Monster (Sesame Street)",
               thumbnail: "/thumbnails/COOKIE.png",
             },
-        
-          ]}
-        />
 
-        <Section
-          title="Tutorials"
-          description="Leaning on my background in teaching, I’ve created simple walkthroughs for VeVe's augmented reality features and a suite of tutorials for the VeVeVerse - VeVe’s collectors metaverse!."
-          videos={[
+            // --- TUTORIALS MERGED IN ---
             {
               src: "https://www.youtube.com/embed/SeIk0LgwZsQ",
               title: "RUNNING MON (Hands in Factory)",
@@ -134,147 +126,96 @@ export default function Portfolio() {
             },
           ]}
         />
-
-        <Section
-          title="Shorts & Skits"
-          description="AR, animation, comedy — and a bunch of effects — all mashed into skits, spoofs, and weird little videos featuring… me! Packed with energy, built on story."
-          videos={[
-            {
-              src: "https://www.youtube.com/embed/Lm3LMbLB-mg",
-              title: "Sam Wilson AR skit",
-              thumbnail: "/thumbnails/SAM WILSON.png",
-            },
-            {
-              src: "https://www.youtube.com/embed/WuXzKxKHoJE",
-              title: "Aliens Vs Avengers AR promo",
-              thumbnail: "/thumbnails/ALIENS VS AVENGERS.png",
-            },
-            {
-              src: "https://www.youtube.com/embed/4RXkBeTRsL4",
-              title: "VeVe News",
-              thumbnail: "/thumbnails/VEVE NEWS.png",
-            },
-            {
-              src: "https://www.youtube.com/embed/ZbD8mL2XaPs",
-              title: "Comedy animation",
-              thumbnail: "/thumbnails/WAYNE.png",
-            },
-            {
-              src: "https://www.youtube.com/embed/SXGcb3uR1TI",
-              title: "Grogu AR skit",
-              thumbnail: "/thumbnails/GROGU SKIT.png",
-            },
-            {
-              src: "https://www.youtube.com/embed/bEx2qNuWh28",
-              title: "Absolute Batman #1 skit",
-              thumbnail: "/thumbnails/ABSOLUTE BATMAN.png",
-            },
-          ]}
-        />
       </main>
 
-      <footer className="bg-black py-10 text-center text-gray-300">
-        <h3 className="font-staatliches text-6xl mb-4 text-white">CONTACT</h3>
-        <div className="space-y-3">
-          <p className="font-special text-lg">ben.dixon.3000@gmail.com</p>
-          <p className="font-special text-lg">07739843516</p>
-          <p className="font-special text-lg">London</p>
-        </div>
-      </footer>
+      {/* ✅ Simple footer */}
+<footer className="bg-branddark text-center text-gray-400 text-sm py-6">
+  © Ben Dixon {new Date().getFullYear()}
+</footer>
+
     </div>
   );
 }
 
-function Hero() {
+/* ✅ Intro text that fades behind scrolling thumbnails */
+function IntroText() {
+  const [opacity, setOpacity] = useState(1);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+
+    // 👇 No fade until you actually start scrolling
+    const fadeStart = 1;   // fade begins once you scroll even slightly
+    const fadeEnd = 530;   // how far before it's fully gone
+
+    let newOpacity = 1;
+    if (scrollTop > fadeStart) {
+      newOpacity = Math.max(0, 1 - (scrollTop - fadeStart) / (fadeEnd - fadeStart));
+    }
+
+    setOpacity(newOpacity);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+
+
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Background Image */}
-      <div className="relative z-0">
-        <img
-  src="/trex-hero.jpg"
-  alt="Hero Background"
-  className="w-full object-top object-contain sm:object-cover"
-/>
-        {/* Gradient Fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-32 bg-gradient-to-b from-transparent to-black z-10 pointer-events-none" />
-      </div>
+    <section
+      className="h-[80vh] flex items-center justify-center text-center sticky top-0 z-0 bg-branddark"
+      style={{
+  opacity,
+  transition: "opacity 0.2s linear",
+}}
 
-      {/* Text Content */}
-      <div className="absolute top-10 sm:top-24 left-4 sm:left-20 z-20 max-w-5xl px-4 group text-left">
-        <div className="relative">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-staatliches text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] text-left">
-            BEN DIXON
-          </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl font-lacquer text-white mt-0 drop-shadow-[0_0_25px_rgba(255,255,255,0.4)] transition-transform duration-300 group-hover:scale-105">
-            CREATIVE CONTENT
-          </h2>
+    >
+      <p className="text-4xl sm:text-5xl md:text-6xl font-bold max-w-5xl mx-auto leading-tight">
 
-          {/* Floating Description */}
-         <div className="absolute top-full left-0 mt-4 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-xl shadow-xl font-special opacity-0 transition-opacity duration-300 hidden lg:block group-hover:opacity-100 max-w-md">
-  Ben Dixon is a London-based content creator with a background in
-  education. He specialises in AR content and dynamic short-form
-  storytelling.
-</div>
 
-        </div>
-      </div>
+        Hi, I’m Ben — a content creator specialising in augmented reality, brand
+        storytelling, and creative tutorials. With a background in education, I
+        transform complex ideas into visual experiences that are dynamic,
+        entertaining, and easy to get.
+      </p>
     </section>
   );
 }
 
-function Section({ title, videos, description }) {
+/* ✅ Unified video grid (3 per row, fullscreen playback) */
+function VideoGrid({ videos }) {
   const [activeVideo, setActiveVideo] = useState(null);
-  const sectionId = title.toLowerCase().split(" ")[0];
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section id={sectionId} className="px-4 pt-10">
-      <div
-        className="mb-10 md:flex md:items-start md:gap-6 group"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <h2 className="text-5xl sm:text-6xl md:text-7xl font-staatliches text-white whitespace-nowrap md:-ml-0 transition-transform duration-300 group-hover:scale-105 glitch">
-          {title}
-        </h2>
+    <section className="pt-10 relative z-10">
 
-        {/* Only show description on desktop */}
-        {description && (
-  <div className="hidden lg:block flex-1 max-w-5xl relative">
-    <div className="absolute top-0 left-0 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-xl shadow-xl w-fit text-sm font-special transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-      {description}
-    </div>
-  </div>
-)}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
 
-      </div>
+        {videos.map((vid, idx) => (
+          <div
+            key={idx}
+            className="overflow-hidden rounded-xl hover:scale-[1.02] transition-transform duration-300 shadow-2xl cursor-pointer"
+            onClick={() => setActiveVideo(`${vid.src}?autoplay=1`)}
+          >
+            <div className="relative group">
+              <img
+                src={vid.thumbnail}
+                alt={vid.title}
+                className="w-full aspect-square object-cover"
+              />
+              {/* Darken whole thumbnail and show title top-left on hover */}
+<div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-start justify-start">
+ <span className="opacity-0 group-hover:opacity-100 text-white text-xs sm:text-sm font-rubik font-light m-3 transition-opacity duration-300">
+  {vid.title}
+</span>
 
-      <div className="columns-1 sm:columns-2 md:columns-3 gap-6 [column-fill:_balance]">
-        <div className="gap-6 space-y-6">
-          {videos.map((vid, idx) => (
-            <div
-              key={idx}
-              className="overflow-hidden rounded-xl hover:scale-[1.02] transition-transform duration-300 shadow-2xl cursor-pointer break-inside-avoid"
-              onClick={() => setActiveVideo(`${vid.src}?autoplay=1`)}
-            >
-             <div className="relative group">
-  <img
-    src={vid.thumbnail}
-    alt={vid.title}
-    className="w-full aspect-square object-cover"
-  />
-
-  {/* Hover caption for desktop only */}
-{/* Hover caption for desktop only */}
-<div className="absolute inset-0 hidden lg:flex items-center justify-center group-hover:opacity-100 opacity-0 transition-opacity duration-300 pointer-events-none">
-  <div className="bg-black bg-opacity-60 text-white text-center font-special text-sm px-2 py-1 rounded-lg max-w-[90%] whitespace-nowrap overflow-hidden text-ellipsis">
-    {vid.title}
-  </div>
 </div>
-</div>
+
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       {activeVideo && (
