@@ -218,23 +218,33 @@ function VideoGrid({ videos }) {
         ))}
       </div>
 
-      {activeVideo && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-          onClick={() => setActiveVideo(null)}
-        >
-          <div className="w-full max-w-4xl aspect-video">
-            <iframe
-              className="w-full h-full"
-              src={activeVideo}
-              title="Expanded Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      )}
+{activeVideo && (
+  <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[9998]">
+    {/* X Button — clearly visible above iframe */}
+    <button
+  onClick={() => setActiveVideo(null)}
+  className="fixed top-14 right-10 text-white text-5xl font-bold bg-black/70 rounded-full w-16 h-16 flex items-center justify-center shadow-2xl border border-white/40 hover:bg-white/20 transition-all duration-300 z-[10000]"
+  aria-label="Close video"
+>
+  ×
+</button>
+
+    {/* Fullscreen video wrapper */}
+    <div className="relative w-full h-full flex items-center justify-center pointer-events-none">
+      <iframe
+        className="w-full h-full z-[9997] pointer-events-auto"
+        src={activeVideo}
+        title="Expanded Video"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+  </div>
+)}
+
+
+
     </section>
   );
 }
