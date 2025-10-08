@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/", // ✅ correct for Netlify and custom domains
+  base: "/", // ✅ this is critical for custom domains like bendixoncontent.com
 });
