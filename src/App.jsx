@@ -20,6 +20,23 @@ export default function Portfolio() {
         <VideoGrid
           videos={[
             // --- AR PROMOS ---
+{
+  src: "https://www.youtube.com/embed/DiXbJRhean0?si=ccQzWKQR_VpMoMMV",
+  title: "AT-AT (Lucasfilm)",
+  thumbnail: getThumbnailPath("AT-AT.png"),
+},
+{
+  src: "https://www.youtube.com/embed/yNlSswKTSXI?si=_3pZ32SfCe9PG_pT",
+  title: "Bad Kitten Club (Cosmic Debris)",
+  thumbnail: getThumbnailPath("BAD KITTEN.png"),
+},
+{
+  src: "https://www.youtube.com/embed/VBBt7UDGQY0",
+  title: "Fantastic Four - Mightys - Season 2 (Marvel)",
+  thumbnail: getThumbnailPath("FF MIGHTYS.png"),
+},
+
+            
             {
               src: "https://www.youtube.com/embed/0escAMEUJ5I",
               title: "Darth Vader - Samurai (Lucasfilm)",
