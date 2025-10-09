@@ -166,7 +166,7 @@ function IntroText() {
       }}
     >
       <p className="text-4xl sm:text-5xl md:text-6xl font-bold max-w-5xl mx-auto leading-tight">
-        Hi, I’m Ben — a contenT creator specialising in augmented reality, brand
+        Hi, I’m Ben — a content creator specialising in augmented reality, brand
         storytelling, and creative tutorials. With a background in education, I
         transform complex ideas into visual experiences that are dynamic,
         entertaining, and easy to get.
