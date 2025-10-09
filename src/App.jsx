@@ -21,15 +21,16 @@ export default function Portfolio() {
           videos={[
             // --- AR PROMOS ---
 {
-  src: "https://www.youtube.com/embed/DiXbJRhean0?si=ccQzWKQR_VpMoMMV",
+  src: "https://www.youtube.com/embed/DiXbJRhean0",
   title: "AT-AT (Lucasfilm)",
   thumbnail: getThumbnailPath("AT-AT.png"),
 },
 {
-  src: "https://www.youtube.com/embed/yNlSswKTSXI?si=_3pZ32SfCe9PG_pT",
+  src: "https://www.youtube.com/embed/yNlSswKTSXI",
   title: "Bad Kitten Club (Cosmic Debris)",
   thumbnail: getThumbnailPath("BAD KITTEN.png"),
 },
+
 {
   src: "https://www.youtube.com/embed/VBBt7UDGQY0",
   title: "Fantastic Four - Mightys - Season 2 (Marvel)",
@@ -220,28 +221,28 @@ function VideoGrid({ videos }) {
           </div>
         ))}
       </div>
+      
+{activeVideo && (
+  <div
+    className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[9998]"
+    onClick={() => setActiveVideo(null)} // close when background is clicked
+  >
+    <div
+      className="relative w-[90vw] max-w-4xl aspect-video flex items-center justify-center"
+      onClick={(e) => e.stopPropagation()} // prevent click inside video from closing
+    >
+      <iframe
+        className="w-full h-full rounded-xl shadow-2xl"
+        src={activeVideo}
+        title="Expanded Video"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+    </div>
+  </div>
+)}
 
-      {activeVideo && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[9998]">
-          <button
-            onClick={() => setActiveVideo(null)}
-            className="fixed top-14 right-10 text-white text-5xl font-bold bg-black/70 rounded-full w-16 h-16 flex items-center justify-center shadow-2xl border border-white/40 hover:bg-white/20 transition-all duration-300 z-[10000]"
-            aria-label="Close video"
-          >
-            ×
-          </button>
-          <div className="relative w-full h-full flex items-center justify-center pointer-events-none">
-            <iframe
-              className="w-full h-full z-[9997] pointer-events-auto"
-              src={activeVideo}
-              title="Expanded Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
