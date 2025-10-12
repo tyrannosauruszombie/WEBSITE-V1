@@ -51,7 +51,7 @@ export default function About() {
           always chasing new ways to push AR and digital creativity further.
         </p>
 
-        <p className="mt-8 font-semibold pb-10 text-xl">
+        <p className="mt-6">
           If you’re looking for someone who’s part educator, part entertainer,
           and 100% committed to making your brand’s story pop (possibly while
           dancing with digital pop stars) — I’m your man.
