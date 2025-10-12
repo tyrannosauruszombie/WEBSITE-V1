@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 body {
-  @apply font-raleway bg-black text-white;
+  @apply font-rubik bg-branddark text-white;
+}
+
+html {
+  scroll-behavior: smooth;
 }

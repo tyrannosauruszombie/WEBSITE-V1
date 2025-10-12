@@ -1,158 +1,167 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Navbar from "./Navbar";
+import About from "./About"; // 👈 new page import
 
 // ✅ Add this helper
 const getThumbnailPath = (file) =>
   `${import.meta.env.BASE_URL}thumbnails/${file}`;
 
-export default function Portfolio() {
+export default function App() {
   return (
-    <div className="bg-branddark text-white min-h-screen font-rubik">
-      {/* ✅ Fixed Navbar */}
-      <Navbar />
+    <Router>
+      <div className="bg-branddark text-white min-h-screen font-rubik">
+        <Navbar />
 
-      {/* ✅ Intro text replaces Hero */}
-      <IntroText />
+        <Routes>
+          {/* --- Work Page (Your Current Main Content) --- */}
+          <Route
+            path="/"
+            element={
+              <>
+                <IntroText />
+                <main className="w-full px-0 pt-0 pb-20">
+                  <VideoGrid
+                    videos={[
+                      // --- your entire video array goes here (unchanged) ---
+                      {
+                        src: "https://www.youtube.com/embed/DiXbJRhean0",
+                        title: "AT-AT (Lucasfilm)",
+                        thumbnail: getThumbnailPath("AT-AT.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/yNlSswKTSXI",
+                        title: "Bad Kitten Club (Cosmic Debris)",
+                        thumbnail: getThumbnailPath("BAD KITTEN.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/VBBt7UDGQY0",
+                        title: "Fantastic Four - Mightys - Season 2 (Marvel)",
+                        thumbnail: getThumbnailPath("FF MIGHTYS.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/0escAMEUJ5I",
+                        title: "Darth Vader - Samurai (Lucasfilm)",
+                        thumbnail: getThumbnailPath("DARTH SAMURAI.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/H7UJp-sJC8Y",
+                        title: "Buzz Lightyear (Disney/Pixar)",
+                        thumbnail: getThumbnailPath("BUZZ LIGHTYEAR.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/_gkJQd7A2oQ",
+                        title: "Edward Kenway (Ubisoft)",
+                        thumbnail: getThumbnailPath("EDWARD KENWAY.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/SkQvXUyHltY",
+                        title: "Human Torch (Marvel)",
+                        thumbnail: getThumbnailPath("HUMAN TORCH.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/REh1in188Dg",
+                        title: "Emily the Strange (Cosmic Debris)",
+                        thumbnail: getThumbnailPath("EMILY STRANGE.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/O5tNo-Btel4",
+                        title: "EMI (Tsuburaya Productions)",
+                        thumbnail: getThumbnailPath("KAIJU EMI.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/5XB9Fc1AH7c",
+                        title: "Maserati Alfieri (Maserati)",
+                        thumbnail: getThumbnailPath("MASERATI ALFIERI.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/z36gu46aE0g",
+                        title: "The Count (Sesame Street)",
+                        thumbnail: getThumbnailPath("THE COUNT.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/CeRx-Wf0AMo",
+                        title: "Ultraman (Tsuburaya Productions)",
+                        thumbnail: getThumbnailPath("ULTRAMAN.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/xAISsdQDE5k",
+                        title: "Winter Soldier (Marvel)",
+                        thumbnail: getThumbnailPath("WINTER SOLDIER.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/VSUEDsCkmBA",
+                        title: "Kawaii Princess Warriors (Tokidoki)",
+                        thumbnail: getThumbnailPath("KAWAII PRINCESS.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/MLWe2OgtGf4",
+                        title: "The P Series (TOBEY)",
+                        thumbnail: getThumbnailPath("TOBEY.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/UFhxAUJnUJ8",
+                        title: "Gambit (Marvel)",
+                        thumbnail: getThumbnailPath("GAMBIT.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/6xLust8bNlA",
+                        title: "Daredevil (Marvel)",
+                        thumbnail: getThumbnailPath("DAREDEVIL.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/EYjHqqRwLOc",
+                        title: "Podracers (Lucasfilm)",
+                        thumbnail: getThumbnailPath("PODRACER.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/9e5JqWNFJoM",
+                        title: "Potball (COOLRAIN)",
+                        thumbnail: getThumbnailPath("POTBALL.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/u9WhHFJqg6Y",
+                        title: "Stormtrooper Helmets (Lucasfilm)",
+                        thumbnail: getThumbnailPath("STORMTROOPER HELMET.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/lH59K3FeWsQ",
+                        title: "Cookie Monster (Sesame Street)",
+                        thumbnail: getThumbnailPath("COOKIE.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/SeIk0LgwZsQ",
+                        title: "RUNNING MON (Hands in Factory)",
+                        thumbnail: getThumbnailPath("RUNNING MON.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/e6r0bFvP8wE",
+                        title: "How to Read AR Comics (Marvel)",
+                        thumbnail: getThumbnailPath("HOW TO AR COMICS.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/embed/cnMkGWLxnS8",
+                        title: "Introduction to the VeVeVerse (VeVe)",
+                        thumbnail: getThumbnailPath("VEVEVERSE.png"),
+                      },
+                    ]}
+                  />
+                </main>
+              </>
+            }
+          />
 
-      {/* ✅ Unified video grid */}
-      <main className="w-full px-0 pt-0 pb-20">
-        <VideoGrid
-          videos={[
-            // --- AR PROMOS ---
-{
-  src: "https://www.youtube.com/embed/DiXbJRhean0",
-  title: "AT-AT (Lucasfilm)",
-  thumbnail: getThumbnailPath("AT-AT.png"),
-},
-{
-  src: "https://www.youtube.com/embed/yNlSswKTSXI",
-  title: "Bad Kitten Club (Cosmic Debris)",
-  thumbnail: getThumbnailPath("BAD KITTEN.png"),
-},
+          {/* --- About Page --- */}
+          <Route path="/about" element={<About />} />
+        </Routes>
 
-{
-  src: "https://www.youtube.com/embed/VBBt7UDGQY0",
-  title: "Fantastic Four - Mightys - Season 2 (Marvel)",
-  thumbnail: getThumbnailPath("FF MIGHTYS.png"),
-},
-
-            
-            {
-              src: "https://www.youtube.com/embed/0escAMEUJ5I",
-              title: "Darth Vader - Samurai (Lucasfilm)",
-              thumbnail: getThumbnailPath("DARTH SAMURAI.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/H7UJp-sJC8Y",
-              title: "Buzz Lightyear (Disney/Pixar)",
-              thumbnail: getThumbnailPath("BUZZ LIGHTYEAR.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/_gkJQd7A2oQ",
-              title: "Edward Kenway (Ubisoft)",
-              thumbnail: getThumbnailPath("EDWARD KENWAY.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/SkQvXUyHltY",
-              title: "Human Torch (Marvel)",
-              thumbnail: getThumbnailPath("HUMAN TORCH.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/REh1in188Dg",
-              title: "Emily the Strange (Cosmic Debris)",
-              thumbnail: getThumbnailPath("EMILY STRANGE.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/O5tNo-Btel4",
-              title: "EMI (Tsuburaya Productions)",
-              thumbnail: getThumbnailPath("KAIJU EMI.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/5XB9Fc1AH7c",
-              title: "Maserati Alfieri (Maserati)",
-              thumbnail: getThumbnailPath("MASERATI ALFIERI.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/z36gu46aE0g",
-              title: "The Count (Sesame Street)",
-              thumbnail: getThumbnailPath("THE COUNT.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/CeRx-Wf0AMo",
-              title: "Ultraman (Tsuburaya Productions)",
-              thumbnail: getThumbnailPath("ULTRAMAN.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/xAISsdQDE5k",
-              title: "Winter Soldier (Marvel)",
-              thumbnail: getThumbnailPath("WINTER SOLDIER.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/VSUEDsCkmBA",
-              title: "Kawaii Princess Warriors (Tokidoki)",
-              thumbnail: getThumbnailPath("KAWAII PRINCESS.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/MLWe2OgtGf4",
-              title: "The P Series (TOBEY)",
-              thumbnail: getThumbnailPath("TOBEY.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/UFhxAUJnUJ8",
-              title: "Gambit (Marvel)",
-              thumbnail: getThumbnailPath("GAMBIT.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/6xLust8bNlA",
-              title: "Daredevil (Marvel)",
-              thumbnail: getThumbnailPath("DAREDEVIL.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/EYjHqqRwLOc",
-              title: "Podracers (Lucasfilm)",
-              thumbnail: getThumbnailPath("PODRACER.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/9e5JqWNFJoM",
-              title: "Potball (COOLRAIN)",
-              thumbnail: getThumbnailPath("POTBALL.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/u9WhHFJqg6Y",
-              title: "Stormtrooper Helmets (Lucasfilm)",
-              thumbnail: getThumbnailPath("STORMTROOPER HELMET.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/lH59K3FeWsQ",
-              title: "Cookie Monster (Sesame Street)",
-              thumbnail: getThumbnailPath("COOKIE.png"),
-            },
-            // --- TUTORIALS MERGED IN ---
-            {
-              src: "https://www.youtube.com/embed/SeIk0LgwZsQ",
-              title: "RUNNING MON (Hands in Factory)",
-              thumbnail: getThumbnailPath("RUNNING MON.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/e6r0bFvP8wE",
-              title: "How to Read AR Comics (Marvel)",
-              thumbnail: getThumbnailPath("HOW TO AR COMICS.png"),
-            },
-            {
-              src: "https://www.youtube.com/embed/cnMkGWLxnS8",
-              title: "Introduction to the VeVeVerse (VeVe)",
-              thumbnail: getThumbnailPath("VEVEVERSE.png"),
-            },
-          ]}
-        />
-      </main>
-
-      {/* ✅ Simple footer */}
-      <footer className="bg-branddark text-center text-gray-400 text-sm py-6">
-        © Ben Dixon {new Date().getFullYear()}
-      </footer>
-    </div>
+        {/* Footer stays visible across all pages */}
+        <footer className="bg-branddark text-center text-gray-400 text-sm py-6">
+          © Ben Dixon {new Date().getFullYear()}
+        </footer>
+      </div>
+    </Router>
   );
 }
 
@@ -167,7 +176,10 @@ function IntroText() {
       const fadeEnd = 530;
       let newOpacity = 1;
       if (scrollTop > fadeStart) {
-        newOpacity = Math.max(0, 1 - (scrollTop - fadeStart) / (fadeEnd - fadeStart));
+        newOpacity = Math.max(
+          0,
+          1 - (scrollTop - fadeStart) / (fadeEnd - fadeStart)
+        );
       }
       setOpacity(newOpacity);
     };
@@ -221,28 +233,27 @@ function VideoGrid({ videos }) {
           </div>
         ))}
       </div>
-      
-{activeVideo && (
-  <div
-    className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[9998]"
-    onClick={() => setActiveVideo(null)} // close when background is clicked
-  >
-    <div
-      className="relative w-[90vw] max-w-4xl aspect-video flex items-center justify-center"
-      onClick={(e) => e.stopPropagation()} // prevent click inside video from closing
-    >
-      <iframe
-        className="w-full h-full rounded-xl shadow-2xl"
-        src={activeVideo}
-        title="Expanded Video"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-    </div>
-  </div>
-)}
 
+      {activeVideo && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-[9998]"
+          onClick={() => setActiveVideo(null)}
+        >
+          <div
+            className="relative w-[90vw] max-w-4xl aspect-video flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              className="w-full h-full rounded-xl shadow-2xl"
+              src={activeVideo}
+              title="Expanded Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
