@@ -45,7 +45,7 @@ export default function AboutCarousel() {
         .animate-scroll {
           display: flex;
           width: max-content;
-          animation: scroll 35s linear infinite; /* speed adjustable */
+          animation: scroll 60s linear infinite; /* speed adjustable */
         }
       `}</style>
     </div>
