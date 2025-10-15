@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./index.css";
 import Navbar from "./Navbar";
-import About from "./About"; // 👈 new page import
+import About from "./About";
 
 // ✅ Add this helper
 const getThumbnailPath = (file) =>
@@ -15,7 +16,7 @@ export default function App() {
         <Navbar />
 
         <Routes>
-          {/* --- Work Page (Your Current Main Content) --- */}
+          {/* --- Work Page (Your Main Content) --- */}
           <Route
             path="/"
             element={
@@ -24,7 +25,6 @@ export default function App() {
                 <main className="w-full px-0 pt-0 pb-20">
                   <VideoGrid
                     videos={[
-                      // --- your entire video array goes here (unchanged) ---
                       {
                         src: "https://www.youtube.com/embed/DiXbJRhean0",
                         title: "AT-AT (Lucasfilm)",
@@ -156,7 +156,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
         </Routes>
 
-        {/* Footer stays visible across all pages */}
+        {/* Footer */}
         <footer className="bg-branddark text-center text-gray-400 text-sm py-6">
           © Ben Dixon {new Date().getFullYear()}
         </footer>
@@ -165,7 +165,7 @@ export default function App() {
   );
 }
 
-/* ✅ Intro text that fades behind scrolling thumbnails */
+/* ✅ Intro text with fade-in (no rise) + scroll fade-out */
 function IntroText() {
   const [opacity, setOpacity] = useState(1);
 
@@ -176,10 +176,7 @@ function IntroText() {
       const fadeEnd = 530;
       let newOpacity = 1;
       if (scrollTop > fadeStart) {
-        newOpacity = Math.max(
-          0,
-          1 - (scrollTop - fadeStart) / (fadeEnd - fadeStart)
-        );
+        newOpacity = Math.max(0, 1 - (scrollTop - fadeStart) / (fadeEnd - fadeStart));
       }
       setOpacity(newOpacity);
     };
@@ -190,17 +187,19 @@ function IntroText() {
   return (
     <section
       className="h-[80vh] flex items-center justify-center text-center sticky top-0 z-0 bg-branddark"
-      style={{
-        opacity,
-        transition: "opacity 0.2s linear",
-      }}
+      style={{ opacity, transition: "opacity 0.2s linear" }}
     >
-      <p className="text-4xl sm:text-5xl md:text-6xl font-bold max-w-5xl mx-auto leading-tight">
+      <motion.p
+        className="font-bold max-w-5xl mx-auto leading-tight text-center text-3xl sm:text-5xl md:text-6xl px-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      >
         Hi, I’m Ben — a content creator specialising in augmented reality, brand
         storytelling, and creative tutorials. With a background in education, I
         transform complex ideas into visual experiences that are dynamic,
         entertaining, and easy to get.
-      </p>
+      </motion.p>
     </section>
   );
 }
