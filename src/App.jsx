@@ -80,11 +80,7 @@ export default function App() {
                         title: "Death Troopers (Lucasfilm)",
                         thumbnail: getThumbnailPath("DEATH TROOPER.png"),
                       },
-                      {
-                        src: "https://youtube.com/shorts/CqVbc3M2HCY?si=8eH4LryET-f4ocwX",
-                        title: "Reverspective S3 (Patrick Hughes)",
-                        thumbnail: getThumbnailPath("REVERSPECTIVE S3.png"),
-                      },
+                      
                         {
                         src: "https://www.youtube.com/embed/SkQvXUyHltY",
                         title: "Human Torch (Marvel)",
@@ -110,6 +106,11 @@ export default function App() {
                         src: null,
                         title: "TMNT Leonardo (Paramount)",
                         thumbnail: getThumbnailPath("LEONARDO.png"),
+                      },
+                      {
+                        src: "https://youtube.com/shorts/CqVbc3M2HCY?si=8eH4LryET-f4ocwX",
+                        title: "Reverspective S3 (Patrick Hughes)",
+                        thumbnail: getThumbnailPath("REVERSPECTIVE S3.png"),
                       },
                       {
                         src: "https://www.youtube.com/watch?v=YGncfA-rTwE",
