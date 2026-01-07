@@ -166,6 +166,7 @@ export default function App() {
 }
 
 /* ✅ Intro text with fade-in (no rise) + scroll fade-out */
+/* ✅ Intro text with fade-in (no rise) + scroll fade-out */
 function IntroText() {
   const [opacity, setOpacity] = useState(1);
 
@@ -174,42 +175,62 @@ function IntroText() {
       const scrollTop = window.scrollY;
       const fadeStart = 1;
       const fadeEnd = 530;
+
       let newOpacity = 1;
       if (scrollTop > fadeStart) {
-        newOpacity = Math.max(0, 1 - (scrollTop - fadeStart) / (fadeEnd - fadeStart));
+        newOpacity = Math.max(
+          0,
+          1 - (scrollTop - fadeStart) / (fadeEnd - fadeStart)
+        );
       }
       setOpacity(newOpacity);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <section
-      className="h-[80vh] flex items-center justify-center text-center sticky top-0 z-0 bg-branddark"
-      style={{ opacity, transition: "opacity 0.2s linear" }}
+ return (
+  <section
+    className="h-[58vh] sm:h-[65vh] flex items-center justify-center text-center sticky top-0 z-0 bg-branddark"
+
+    style={{ opacity, transition: "opacity 0.2s linear" }}
+  >
+    <motion.div
+      className="px-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
     >
-      <motion.p
-        className="font-bold max-w-5xl mx-auto leading-tight text-center text-3xl sm:text-5xl md:text-6xl px-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-      >
-        Hi, I’m Ben — a content creator specialising in augmented reality, brand
-        storytelling, and creative tutorials. With a background in education, I
-        transform complex ideas into visual experiences that are dynamic,
-        entertaining, and easy to get.
-      </motion.p>
-    </section>
-  );
+      {/* Wrapper becomes the exact width of the H1 */}
+     <div className="inline-block scale-[1.1] sm:scale-[1.15] md:scale-[1.2]">
+        <h1 className="font-bold font-rubik leading-none text-6xl sm:text-7xl sm:text-8xl md:text-9xl lg:text-[10rem]">
+          BEN DIXON
+        </h1>
+
+        {/* CREATIVE stretched to match the exact width */}
+        <div className="mt-4 flex w-full justify-between uppercase font-rubik font-light text-xl sm:text-2xl md:text-3xl opacity-80 scale-x-[0.97]">
+
+
+
+          {"CREATIVE".split("").map((ch, i) => (
+            <span key={i}>{ch}</span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  </section>
+);
+
 }
+
 
 /* ✅ Unified video grid (3 per row, fullscreen playback) */
 function VideoGrid({ videos }) {
   const [activeVideo, setActiveVideo] = useState(null);
 
   return (
-    <section className="pt-10 relative z-10">
+    <section className="-mt-10 sm:mt-0 pt-2 relative z-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
         {videos.map((vid, idx) => (
           <div
