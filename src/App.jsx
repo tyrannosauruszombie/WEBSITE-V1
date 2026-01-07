@@ -5,9 +5,43 @@ import "./index.css";
 import Navbar from "./Navbar";
 import About from "./About";
 
-// ✅ Add this helper
+// ✅ Thumbnail helper (public/thumbnails/*)
 const getThumbnailPath = (file) =>
   `${import.meta.env.BASE_URL}thumbnails/${file}`;
+
+// ✅ Convert any YouTube URL (youtu.be / watch / shorts) into an embeddable URL
+const toYouTubeEmbedUrl = (url) => {
+  if (!url) return null;
+
+  // Already an embed link
+  if (url.includes("youtube.com/embed/")) return url;
+
+  try {
+    const u = new URL(url);
+
+    // youtu.be/VIDEO_ID
+    if (u.hostname.includes("youtu.be")) {
+      const id = u.pathname.replace("/", "");
+      return `https://www.youtube.com/embed/${id}`;
+    }
+
+    // youtube.com/watch?v=VIDEO_ID
+    if (u.pathname === "/watch") {
+      const id = u.searchParams.get("v");
+      if (id) return `https://www.youtube.com/embed/${id}`;
+    }
+
+    // youtube.com/shorts/VIDEO_ID
+    if (u.pathname.startsWith("/shorts/")) {
+      const id = u.pathname.split("/shorts/")[1].split("/")[0];
+      return `https://www.youtube.com/embed/${id}`;
+    }
+  } catch (e) {
+    // ignore and fall back
+  }
+
+  return url;
+};
 
 export default function App() {
   return (
@@ -25,6 +59,69 @@ export default function App() {
                 <main className="w-full px-0 pt-0 pb-20">
                   <VideoGrid
                     videos={[
+                      // --- New thumbnails ---
+                      {
+                        src: "https://youtu.be/XNyzzivphA0?si=VkcTfFepL48gyq7U",
+                        title: "Avatar – Jake Sully (20th Century Studios)",
+                        thumbnail: getThumbnailPath("AVATAR JAKE.png"),
+                      },
+                      {
+                        src: "https://youtu.be/9ZeA7w5UeEw?si=l6R4iz8qBFG7E4br",
+                        title: "Coca-Cola Neon Signs (Coca-Cola)",
+                        thumbnail: getThumbnailPath("COCA COLA NEON.png"),
+                      },
+                      {
+                        src: "https://youtu.be/xHwW5erIGc0?si=wgpwiQQOSeQr7kbE",
+                        title: "TMNT Michelangelo (Paramount)",
+                        thumbnail: getThumbnailPath("MICHELANGELO.png"),
+                      },
+                      {
+                        src: "https://youtu.be/Vy82H3ZZ--w?si=Qj3av0PGxDxNJbc_",
+                        title: "Death Troopers (Lucasfilm)",
+                        thumbnail: getThumbnailPath("DEATH TROOPER.png"),
+                      },
+                      {
+                        src: "https://youtube.com/shorts/CqVbc3M2HCY?si=8eH4LryET-f4ocwX",
+                        title: "Reverspective S3 (Patrick Hughes)",
+                        thumbnail: getThumbnailPath("REVERSPECTIVE S3.png"),
+                      },
+                      {
+                        src: null,
+                        title: "TMNT Leonardo (Paramount)",
+                        thumbnail: getThumbnailPath("LEONARDO.png"),
+                      },
+                      {
+                        src: "https://youtu.be/AP2hpEiVMeA?si=5Dh7px4c3JarhKHq",
+                        title: "Tiger (Ducobi)",
+                        thumbnail: getThumbnailPath("DUCOBI.png"),
+                      },
+                      {
+                        src: "https://youtube.com/shorts/PtZG4vxK3w8?si=xl7NOWIMX15jNtRh",
+                        title: "Nozzle Eye (Nick Walker)",
+                        thumbnail: getThumbnailPath("NOZZLE EYE.png"),
+                      },
+                      {
+                        src: "https://youtube.com/shorts/CKsqxxbc8Z4?si=9CHaF4SkzzVMeaaH",
+                        title: "NOUNish Friends S2 (Bigshot Toyworks)",
+                        thumbnail: getThumbnailPath("NOUNS S2.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/watch?v=YGncfA-rTwE",
+                        title: "Spider-Man 2099 S2 (Marvel)",
+                        thumbnail: getThumbnailPath("SPIDERMAN 2099 S2.png"),
+                      },
+                      {
+                        src: "https://www.youtube.com/watch?v=AhjKfwsKTSA",
+                        title: "Bone Appetite (Matt Gondek)",
+                        thumbnail: getThumbnailPath("BONE APPETITE.png"),
+                      },
+                      {
+                        src: "https://youtu.be/uemb8T98388?si=j9cdqY8Fd_vOOrLV",
+                        title: "Kaiju Monsters (Tsuburaya Productions)",
+                        thumbnail: getThumbnailPath("KAIJU MONSTERS.png"),
+                      },
+
+                      // --- Existing thumbnails ---
                       {
                         src: "https://www.youtube.com/embed/DiXbJRhean0",
                         title: "AT-AT (Lucasfilm)",
@@ -37,7 +134,7 @@ export default function App() {
                       },
                       {
                         src: "https://www.youtube.com/embed/VBBt7UDGQY0",
-                        title: "Fantastic Four - Mightys - Season 2 (Marvel)",
+                        title: "Fantastic Four S2 - Marvel Mightys (Marvel)",
                         thumbnail: getThumbnailPath("FF MIGHTYS.png"),
                       },
                       {
@@ -166,7 +263,6 @@ export default function App() {
 }
 
 /* ✅ Intro text with fade-in (no rise) + scroll fade-out */
-/* ✅ Intro text with fade-in (no rise) + scroll fade-out */
 function IntroText() {
   const [opacity, setOpacity] = useState(1);
 
@@ -190,40 +286,32 @@ function IntroText() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
- return (
-  <section
-    className="h-[58vh] sm:h-[65vh] flex items-center justify-center text-center sticky top-0 z-0 bg-branddark"
-
-    style={{ opacity, transition: "opacity 0.2s linear" }}
-  >
-    <motion.div
-      className="px-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
+  return (
+    <section
+      className="h-[58vh] sm:h-[65vh] flex items-center justify-center text-center sticky top-0 z-0 bg-branddark"
+      style={{ opacity, transition: "opacity 0.2s linear" }}
     >
-      {/* Wrapper becomes the exact width of the H1 */}
-     <div className="inline-block scale-[1.1] sm:scale-[1.15] md:scale-[1.2]">
-        <h1 className="font-bold font-rubik leading-none text-6xl sm:text-7xl sm:text-8xl md:text-9xl lg:text-[10rem]">
-          BEN DIXON
-        </h1>
+      <motion.div
+        className="px-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      >
+        <div className="inline-block scale-[1.1] sm:scale-[1.15] md:scale-[1.2]">
+          <h1 className="font-bold font-rubik leading-none text-6xl sm:text-8xl md:text-9xl lg:text-[10rem]">
+            BEN DIXON
+          </h1>
 
-        {/* CREATIVE stretched to match the exact width */}
-        <div className="mt-4 flex w-full justify-between uppercase font-rubik font-light text-xl sm:text-2xl md:text-3xl opacity-80 scale-x-[0.97]">
-
-
-
-          {"CREATIVE".split("").map((ch, i) => (
-            <span key={i}>{ch}</span>
-          ))}
+          <div className="mt-4 flex w-full justify-between uppercase font-rubik font-light text-xl sm:text-2xl md:text-3xl opacity-80 scale-x-[0.97]">
+            {"CREATIVE".split("").map((ch, i) => (
+              <span key={i}>{ch}</span>
+            ))}
+          </div>
         </div>
-      </div>
-    </motion.div>
-  </section>
-);
-
+      </motion.div>
+    </section>
+  );
 }
-
 
 /* ✅ Unified video grid (3 per row, fullscreen playback) */
 function VideoGrid({ videos }) {
@@ -235,8 +323,13 @@ function VideoGrid({ videos }) {
         {videos.map((vid, idx) => (
           <div
             key={idx}
-            className="overflow-hidden rounded-xl hover:scale-[1.02] transition-transform duration-300 shadow-2xl cursor-pointer"
-            onClick={() => setActiveVideo(`${vid.src}?autoplay=1`)}
+            className={`overflow-hidden rounded-xl transition-transform duration-300 shadow-2xl ${
+              vid.src ? "cursor-pointer hover:scale-[1.02]" : "cursor-default"
+            }`}
+            onClick={() => {
+              const embed = toYouTubeEmbedUrl(vid.src);
+              if (embed) setActiveVideo(`${embed}?autoplay=1`);
+            }}
           >
             <div className="relative group">
               <img
@@ -249,6 +342,12 @@ function VideoGrid({ videos }) {
                   {vid.title}
                 </span>
               </div>
+
+              {!vid.src && (
+                <span className="absolute bottom-3 right-3 text-xs bg-black/70 px-2 py-1 rounded">
+                  Coming soon
+                </span>
+              )}
             </div>
           </div>
         ))}
@@ -270,7 +369,7 @@ function VideoGrid({ videos }) {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-            ></iframe>
+            />
           </div>
         </div>
       )}

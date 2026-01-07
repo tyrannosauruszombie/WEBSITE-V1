@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // 👈 import Link from React Router
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <nav className="bg-branddark text-white px-6 py-4 flex items-center justify-between font-rubik fixed w-full top-0 z-50 shadow-md">
       {/* Left side links */}
-      <div className="flex space-x-8 text-lg">
+      <div className="flex space-x-8 text-sm uppercase tracking-wider">
         <Link
           to="/"
           className="transition-transform duration-200 hover:scale-110 font-bold"
@@ -28,7 +28,7 @@ export default function Navbar() {
 
         <a
           href="mailto:ben.dixon.3000@gmail.com"
-          className="hover:font-bold transition-all duration-200"
+          className="transition-transform duration-200 hover:scale-110"
         >
           Contact
         </a>
