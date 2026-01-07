@@ -85,11 +85,12 @@ export default function App() {
                         title: "Reverspective S3 (Patrick Hughes)",
                         thumbnail: getThumbnailPath("REVERSPECTIVE S3.png"),
                       },
-                      {
-                        src: null,
-                        title: "TMNT Leonardo (Paramount)",
-                        thumbnail: getThumbnailPath("LEONARDO.png"),
+                        {
+                        src: "https://www.youtube.com/embed/SkQvXUyHltY",
+                        title: "Human Torch (Marvel)",
+                        thumbnail: getThumbnailPath("HUMAN TORCH.png"),
                       },
+                      
                       {
                         src: "https://youtu.be/AP2hpEiVMeA?si=5Dh7px4c3JarhKHq",
                         title: "Tiger (Ducobi)",
@@ -104,6 +105,11 @@ export default function App() {
                         src: "https://youtube.com/shorts/CKsqxxbc8Z4?si=9CHaF4SkzzVMeaaH",
                         title: "NOUNish Friends S2 (Bigshot Toyworks)",
                         thumbnail: getThumbnailPath("NOUNS S2.png"),
+                      },
+                      {
+                        src: null,
+                        title: "TMNT Leonardo (Paramount)",
+                        thumbnail: getThumbnailPath("LEONARDO.png"),
                       },
                       {
                         src: "https://www.youtube.com/watch?v=YGncfA-rTwE",
@@ -152,11 +158,7 @@ export default function App() {
                         title: "Edward Kenway (Ubisoft)",
                         thumbnail: getThumbnailPath("EDWARD KENWAY.png"),
                       },
-                      {
-                        src: "https://www.youtube.com/embed/SkQvXUyHltY",
-                        title: "Human Torch (Marvel)",
-                        thumbnail: getThumbnailPath("HUMAN TORCH.png"),
-                      },
+                    
                       {
                         src: "https://www.youtube.com/embed/REh1in188Dg",
                         title: "Emily the Strange (Cosmic Debris)",
