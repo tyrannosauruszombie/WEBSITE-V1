@@ -103,7 +103,7 @@ export default function App() {
                         thumbnail: getThumbnailPath("NOUNS S2.png"),
                       },
                       {
-                        src: null,
+                        src: "https://youtu.be/gPX9vVmyckQ?si=VzC8JNLmc-lNSpdg",
                         title: "TMNT Leonardo (Paramount)",
                         thumbnail: getThumbnailPath("LEONARDO.png"),
                       },
