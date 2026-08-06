@@ -60,6 +60,87 @@ export default function App() {
                   <VideoGrid
                     videos={[
                       // --- New thumbnails ---
+
+                      {
+  src: "https://www.youtube.com/shorts/yQen0g3Th7c",
+  title: "Sung Jin-woo (Solo Leveling Animation Partners)",
+  thumbnail: getThumbnailPath("SUNG JINWOO.png"),
+},
+{
+  src: "https://www.youtube.com/watch?v=pdnoHieezgQ",
+  title: "Boba Fett (Lucasfilm)",
+  thumbnail: getThumbnailPath("BOBA FETT.png"),
+},
+{
+  src: "https://www.youtube.com/watch?v=saoC2gPbAu8",
+  title: "Predator (20th Century Studios)",
+  thumbnail: getThumbnailPath("PREDATOR.png"),
+},
+{
+  src: "https://www.youtube.com/shorts/AOvovWvBK98",
+  title: "Sushi Cars (Tokidoki)",
+  thumbnail: getThumbnailPath("SUSHI CARS.png"),
+},
+{
+  src: "https://www.youtube.com/shorts/0f7Mzbk4xEA",
+  title: "Aang (Paramount)",
+  thumbnail: getThumbnailPath("AANG.png"),
+},
+{
+  src: "https://www.youtube.com/shorts/fqEf9u4GqBs",
+  title: "Mickey Mouse and Friends (Disney)",
+  thumbnail: getThumbnailPath("MICKEY.png"),
+},
+
+{
+  src: "https://www.youtube.com/shorts/7u1w2hNAxS0",
+  title: "Yoda (Lucasfilm)",
+  thumbnail: getThumbnailPath("YODA.png"),
+},
+{
+  src: "https://www.youtube.com/shorts/MQB-_83vTwc",
+  title: "BB-8 (Lucasfilm)",
+  thumbnail: getThumbnailPath("BB 8.png"),
+},
+
+{
+  src: "https://www.youtube.com/shorts/RUUrrFMzSr4",
+  title: "Emma Frost (Marvel)",
+  thumbnail: getThumbnailPath("EMMA FROST.png"),
+},
+{
+  src: "https://www.youtube.com/shorts/aO2xmKnGVRU",
+  title: "Cartenon Temple (Solo Leveling Animation Partners)",
+  thumbnail: getThumbnailPath("CARTENON TEMPLE.png"),
+},
+{
+  src: "https://www.youtube.com/shorts/2tm0Gph4_k4",
+  title: "Millennium Falcon (Lucasfilm)",
+  thumbnail: getThumbnailPath("MILLENNIUM FALCON.png"),
+},
+
+{
+  src: "https://www.youtube.com/shorts/q5yJJq5X1-s",
+  title: "Hellfire Gala (Marvel)",
+  thumbnail: getThumbnailPath("HELLFIRE GALA.png"),
+},
+{
+  src: "https://www.youtube.com/shorts/vqbcBov0pPk",
+  title: "AR Update (VeVe)",
+  thumbnail: getThumbnailPath("AR UPDATE.png"),
+},
+{
+  src: "https://www.youtube.com/shorts/BKkTcgF-UOE",
+  title: "Spider-Man Villains (Marvel)",
+  thumbnail: getThumbnailPath("SM VILLAINS.png"),
+},
+{
+  src: "https://www.youtube.com/shorts/Gm_OMAf2Z00",
+  title: "Splinter (Paramount)",
+  thumbnail: getThumbnailPath("SPLINTER.png"),
+},
+
+
                       {
                         src: "https://youtu.be/XNyzzivphA0?si=VkcTfFepL48gyq7U",
                         title: "Avatar – Jake Sully (20th Century Studios)",
