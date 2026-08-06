@@ -9,6 +9,8 @@ const photos = [
   "/about/ABOUT 6.png",
   "/about/ABOUT 7.png",
   "/about/ABOUT 8.png",
+  "/about/ABOUT 9.png",
+  "/about/ABOUT 10.png",
 ];
 
 export default function AboutCarousel() {
