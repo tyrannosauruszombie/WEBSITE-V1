@@ -67,10 +67,11 @@ export default function App() {
   thumbnail: getThumbnailPath("SUNG JINWOO.png"),
 },
 {
-  src: "https://www.youtube.com/watch?v=pdnoHieezgQ",
-  title: "Boba Fett (Lucasfilm)",
-  thumbnail: getThumbnailPath("BOBA FETT.png"),
+  src: "https://www.youtube.com/shorts/fqEf9u4GqBs",
+  title: "Mickey Mouse and Friends (Disney)",
+  thumbnail: getThumbnailPath("MICKEY.png"),
 },
+
 {
   src: "https://www.youtube.com/watch?v=saoC2gPbAu8",
   title: "Predator (20th Century Studios)",
@@ -86,11 +87,7 @@ export default function App() {
   title: "Aang (Paramount)",
   thumbnail: getThumbnailPath("AANG.png"),
 },
-{
-  src: "https://www.youtube.com/shorts/fqEf9u4GqBs",
-  title: "Mickey Mouse and Friends (Disney)",
-  thumbnail: getThumbnailPath("MICKEY.png"),
-},
+
 
 {
   src: "https://www.youtube.com/shorts/7u1w2hNAxS0",
@@ -107,6 +104,12 @@ export default function App() {
   src: "https://www.youtube.com/shorts/RUUrrFMzSr4",
   title: "Emma Frost (Marvel)",
   thumbnail: getThumbnailPath("EMMA FROST.png"),
+},
+
+{
+  src: "https://www.youtube.com/watch?v=pdnoHieezgQ",
+  title: "Boba Fett (Lucasfilm)",
+  thumbnail: getThumbnailPath("BOBA FETT.png"),
 },
 {
   src: "https://www.youtube.com/shorts/aO2xmKnGVRU",
