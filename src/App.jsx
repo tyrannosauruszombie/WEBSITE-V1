@@ -73,10 +73,11 @@ export default function App() {
 },
 
 {
-  src: "https://www.youtube.com/watch?v=saoC2gPbAu8",
-  title: "Predator (20th Century Studios)",
-  thumbnail: getThumbnailPath("PREDATOR.png"),
+  src: "https://www.youtube.com/shorts/7u1w2hNAxS0",
+  title: "Yoda (Lucasfilm)",
+  thumbnail: getThumbnailPath("YODA.png"),
 },
+
 {
   src: "https://www.youtube.com/shorts/AOvovWvBK98",
   title: "Sushi Cars (Tokidoki)",
@@ -89,10 +90,12 @@ export default function App() {
 },
 
 
+
+
 {
-  src: "https://www.youtube.com/shorts/7u1w2hNAxS0",
-  title: "Yoda (Lucasfilm)",
-  thumbnail: getThumbnailPath("YODA.png"),
+  src: "https://www.youtube.com/watch?v=saoC2gPbAu8",
+  title: "Predator (20th Century Studios)",
+  thumbnail: getThumbnailPath("PREDATOR.png"),
 },
 
 {
