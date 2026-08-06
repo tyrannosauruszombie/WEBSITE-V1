@@ -94,11 +94,14 @@ export default function App() {
   title: "Yoda (Lucasfilm)",
   thumbnail: getThumbnailPath("YODA.png"),
 },
+
 {
-  src: "https://www.youtube.com/shorts/MQB-_83vTwc",
-  title: "BB-8 (Lucasfilm)",
-  thumbnail: getThumbnailPath("BB 8.png"),
-},
+                        src: "https://youtu.be/9ZeA7w5UeEw?si=l6R4iz8qBFG7E4br",
+                        title: "Coca-Cola Neon Signs (Coca-Cola)",
+                        thumbnail: getThumbnailPath("COCA COLA NEON.png"),
+                      },
+
+
 
 {
   src: "https://www.youtube.com/shorts/RUUrrFMzSr4",
@@ -149,11 +152,13 @@ export default function App() {
                         title: "Avatar – Jake Sully (20th Century Studios)",
                         thumbnail: getThumbnailPath("AVATAR JAKE.png"),
                       },
+
                       {
-                        src: "https://youtu.be/9ZeA7w5UeEw?si=l6R4iz8qBFG7E4br",
-                        title: "Coca-Cola Neon Signs (Coca-Cola)",
-                        thumbnail: getThumbnailPath("COCA COLA NEON.png"),
-                      },
+  src: "https://www.youtube.com/shorts/MQB-_83vTwc",
+  title: "BB-8 (Lucasfilm)",
+  thumbnail: getThumbnailPath("BB 8.png"),
+},
+                      
                       {
                         src: "https://youtu.be/xHwW5erIGc0?si=wgpwiQQOSeQr7kbE",
                         title: "TMNT Michelangelo (Paramount)",
