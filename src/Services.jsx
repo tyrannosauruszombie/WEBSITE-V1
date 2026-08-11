@@ -3,18 +3,13 @@ import React from "react";
 export default function Services() {
   return (
     <main className="bg-branddark text-white min-h-screen font-rubik">
-
-      {/* Header */}
-      <section className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pt-32 pb-20 text-center">
-        <h1 className="font-bold text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none">
-          SERVICES
+      {/* Intro */}
+      <section className="max-w-5xl mx-auto px-6 md:px-10 pt-28 pb-20 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold leading-tight">
+          Video content for brands, products and ideas worth talking about.
         </h1>
 
-        <h2 className="mt-8 text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
-          Video content for brands, products and ideas worth talking about.
-        </h2>
-
-        <p className="mt-6 max-w-3xl mx-auto text-lg sm:text-xl leading-relaxed opacity-90">
+        <p className="mt-6 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
           I create engaging video content from concept to final edit, helping
           brands explain products, tell stories and connect with their
           audiences.
@@ -22,91 +17,101 @@ export default function Services() {
       </section>
 
       {/* Services */}
-      <section className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 pb-24">
+      <section className="max-w-5xl mx-auto px-6 md:px-10">
+        <div className="border-t border-white/20 py-16">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            VIDEO PRODUCTION
+          </h2>
 
-        <Service
-          title="VIDEO PRODUCTION"
-          process="Concept → Script → Shoot → Edit"
-        >
-          From the first idea to the finished video. Concept development,
-          scripting, filming, editing and final delivery.
-        </Service>
+          <p className="mt-4 text-lg text-gray-400">
+            Concept → Script → Shoot → Edit
+          </p>
 
-        <Service
-          title="SOCIAL CONTENT"
-          process="Short-form → Stories → Scroll-stopping ideas"
-        >
-          Short-form videos designed to grab attention, tell a story and give
-          people a reason to stop scrolling.
-        </Service>
+          <p className="mt-6 text-lg leading-relaxed max-w-3xl">
+            From the first idea to the finished video. Concept development,
+            scripting, filming, editing and final delivery.
+          </p>
+        </div>
 
-        <Service
-          title="PRODUCT & TUTORIAL VIDEOS"
-          process="Explain → Demonstrate → Engage"
-        >
-          Clear, engaging videos that make products, features and ideas easy
-          to understand without making them boring.
-        </Service>
+        <div className="border-t border-white/20 py-16">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            SOCIAL CONTENT
+          </h2>
 
-        <Service
-          title="AUGMENTED REALITY"
-          process="Concept → Staging → Capture → Post-production"
-        >
-          Creative AR content that brings digital experiences into the real
-          world, from concept and staging through to filming and
-          post-production.
-        </Service>
+          <p className="mt-4 text-lg text-gray-400">
+            Short-form → Stories → Scroll-stopping ideas
+          </p>
 
-        <Service
-          title="VIDEO EDITING"
-          process="Footage → Story → Polish"
-        >
-          Turning footage into polished, engaging content through editing,
-          sound, graphics, masking and light visual effects.
-        </Service>
+          <p className="mt-6 text-lg leading-relaxed max-w-3xl">
+            Short-form videos designed to grab attention, tell a story and
+            give people a reason to stop scrolling.
+          </p>
+        </div>
 
+        <div className="border-t border-white/20 py-16">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            PRODUCT &amp; TUTORIAL VIDEOS
+          </h2>
+
+          <p className="mt-4 text-lg text-gray-400">
+            Explain → Demonstrate → Engage
+          </p>
+
+          <p className="mt-6 text-lg leading-relaxed max-w-3xl">
+            Clear, engaging videos that make products, features and ideas easy
+            to understand without making them boring.
+          </p>
+        </div>
+
+        <div className="border-t border-white/20 py-16">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            AUGMENTED REALITY
+          </h2>
+
+          <p className="mt-4 text-lg text-gray-400">
+            Concept → Stage → Shoot → Post
+          </p>
+
+          <p className="mt-6 text-lg leading-relaxed max-w-3xl">
+            Creative AR content that brings digital experiences into the real
+            world, from concept and staging through to filming and
+            post-production.
+          </p>
+        </div>
+
+        <div className="border-t border-white/20 py-16">
+          <h2 className="text-4xl md:text-5xl font-bold">
+            VIDEO EDITING
+          </h2>
+
+          <p className="mt-4 text-lg text-gray-400">
+            Footage → Edit → Polish → Deliver
+          </p>
+
+          <p className="mt-6 text-lg leading-relaxed max-w-3xl">
+            Turning footage into polished, engaging content through editing,
+            sound, graphics, masking and light visual effects.
+          </p>
+        </div>
+
+        {/* Contact */}
+        <div className="border-t border-white/20 py-20 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            HAVE A PROJECT IN MIND?
+          </h2>
+
+          <p className="mt-4 text-xl text-gray-300">
+            I&apos;d love to hear about it.
+          </p>
+
+          <a
+            href="mailto:ben.dixon.3000@gmail.com"
+            className="inline-block mt-8 text-lg font-bold hover:opacity-70 transition-opacity"
+          >
+            CONTACT →
+          </a>
+        </div>
       </section>
-
-      {/* CTA */}
-      <section className="max-w-4xl mx-auto px-6 pb-32 text-center">
-        <h2 className="font-bold text-4xl sm:text-5xl md:text-6xl leading-tight">
-          HAVE A PROJECT IN MIND?
-        </h2>
-
-        <p className="mt-6 text-xl sm:text-2xl">
-          I'd love to hear about it.
-        </p>
-
-        <a
-          href="mailto:ben.dixon.3000@gmail.com"
-          className="inline-block mt-8 text-lg font-bold border-b-2 border-white pb-1 hover:opacity-60 transition-opacity"
-        >
-          CONTACT →
-        </a>
-      </section>
-
     </main>
-  );
-}
-
-
-/* Individual service section */
-function Service({ title, process, children }) {
-  return (
-    <div className="border-t border-white/20 py-14 sm:py-16">
-
-      <h2 className="font-bold text-4xl sm:text-5xl md:text-6xl leading-none">
-        {title}
-      </h2>
-
-      <p className="mt-5 text-base sm:text-lg md:text-xl opacity-60">
-        {process}
-      </p>
-
-      <p className="mt-6 max-w-3xl text-lg sm:text-xl leading-relaxed opacity-90">
-        {children}
-      </p>
-
-    </div>
   );
 }
