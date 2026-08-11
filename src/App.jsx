@@ -348,8 +348,6 @@ export default function App() {
             }
           />
 
-          <Testimonial />
-
           {/* --- About Page --- */}
           <Route path="/about" element={<About />} />
         </Routes>
@@ -417,26 +415,6 @@ function IntroText() {
 /* ✅ Unified video grid (3 per row, fullscreen playback) */
 function VideoGrid({ videos }) {
   const [activeVideo, setActiveVideo] = useState(null);
-
-  /* Testimonial */
-function Testimonial() {
-  return (
-    <section className="max-w-4xl mx-auto px-6 md:px-10 py-24 text-center">
-      <p className="text-lg md:text-xl leading-relaxed italic text-gray-300">
-        “Ben is friendly, solutions focused, pragmatic, creative and delivers
-        to brief with speed and finesse. He has a great sense of humour and is
-        able to take complex concepts, many requirements and make them easy to
-        digest for the audience.”
-      </p>
-
-      <p className="mt-6 text-sm text-gray-400">
-        <span className="font-medium text-white">Renee Tan</span>
-        <br />
-        Digital Marketing
-      </p>
-    </section>
-  );
-}
 
   return (
     <section className="-mt-10 sm:mt-0 pt-2 relative z-10">
