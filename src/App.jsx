@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import "./index.css";
 import Navbar from "./Navbar";
 import About from "./About";
+import Services from "./Services";
 
 // Thumbnail helper
 const getThumbnailPath = (file) =>
@@ -382,9 +383,12 @@ export default function App() {
             }
           />
 
-          {/* --- About Page --- */}
-          <Route path="/about" element={<About />} />
-        </Routes>
+        {/* --- About Page --- */}
+<Route path="/about" element={<About />} />
+
+{/* --- Services Page --- */}
+<Route path="/services" element={<Services />} />
+</Routes>
 
         {/* Footer */}
         <footer className="bg-branddark text-center text-gray-400 text-sm py-6">

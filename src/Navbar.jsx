@@ -11,28 +11,37 @@ export default function Navbar() {
   return (
     <nav className="bg-branddark text-white px-6 py-4 flex items-center justify-between font-rubik fixed w-full top-0 z-50 shadow-md">
       {/* Left side links */}
-      <div className="flex space-x-8 text-sm uppercase tracking-wider">
-        <Link
-          to="/"
-          className="transition-transform duration-200 hover:scale-110 font-bold"
-        >
-          Work
-        </Link>
+<div className="flex space-x-8 text-lg uppercase">
 
-        <Link
-          to="/about"
-          className="transition-transform duration-200 hover:scale-110"
-        >
-          About
-        </Link>
+  <Link
+    to="/"
+    className="transition-transform duration-200 hover:scale-110 font-bold"
+  >
+    Work
+  </Link>
 
-        <a
-          href="mailto:ben.dixon.3000@gmail.com"
-          className="transition-transform duration-200 hover:scale-110"
-        >
-          Contact
-        </a>
-      </div>
+  <Link
+    to="/services"
+    className="transition-transform duration-200 hover:scale-110"
+  >
+    Services
+  </Link>
+
+  <Link
+    to="/about"
+    className="transition-transform duration-200 hover:scale-110"
+  >
+    About
+  </Link>
+
+  <a
+    href="mailto:ben.dixon.3000@gmail.com"
+    className="hover:font-bold transition-all duration-200"
+  >
+    Contact
+  </a>
+
+</div>
 
       {/* Right side icons */}
       <div className="flex space-x-4 text-xl">
