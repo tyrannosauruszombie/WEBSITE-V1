@@ -5,11 +5,11 @@ import "./index.css";
 import Navbar from "./Navbar";
 import About from "./About";
 
-// ✅ Thumbnail helper (public/thumbnails/*)
+// Thumbnail helper
 const getThumbnailPath = (file) =>
   `${import.meta.env.BASE_URL}thumbnails/${file}`;
 
-// ✅ Convert any YouTube URL (youtu.be / watch / shorts) into an embeddable URL
+// Convert YouTube URLs into embeddable URLs
 const toYouTubeEmbedUrl = (url) => {
   if (!url) return null;
 
@@ -37,7 +37,7 @@ const toYouTubeEmbedUrl = (url) => {
       return `https://www.youtube.com/embed/${id}`;
     }
   } catch (e) {
-    // ignore and fall back
+    // Ignore and fall back
   }
 
   return url;
@@ -50,292 +50,323 @@ export default function App() {
         <Navbar />
 
         <Routes>
-          {/* --- Work Page (Your Main Content) --- */}
+          {/* --- Work Page --- */}
           <Route
             path="/"
             element={
               <>
                 <IntroText />
+
                 <main className="w-full px-0 pt-0 pb-20">
                   <VideoGrid
                     videos={[
                       // --- New thumbnails ---
 
                       {
-  src: "https://www.youtube.com/shorts/yQen0g3Th7c",
-  title: "Sung Jin-woo (Solo Leveling Animation Partners)",
-  thumbnail: getThumbnailPath("SUNG JINWOO.png"),
-},
-{
-  src: "https://www.youtube.com/shorts/fqEf9u4GqBs",
-  title: "Mickey Mouse and Friends (Disney)",
-  thumbnail: getThumbnailPath("MICKEY.png"),
-},
+                        src: "https://www.youtube.com/shorts/yQen0g3Th7c",
+                        title:
+                          "Sung Jin-woo (Solo Leveling Animation Partners)",
+                        thumbnail: getThumbnailPath("SUNG JINWOO.png"),
+                      },
 
-{
-  src: "https://www.youtube.com/shorts/7u1w2hNAxS0",
-  title: "Yoda (Lucasfilm)",
-  thumbnail: getThumbnailPath("YODA.png"),
-},
+                      {
+                        src: "https://www.youtube.com/shorts/fqEf9u4GqBs",
+                        title: "Mickey Mouse and Friends (Disney)",
+                        thumbnail: getThumbnailPath("MICKEY.png"),
+                      },
 
-{
-  src: "https://www.youtube.com/shorts/AOvovWvBK98",
-  title: "Sushi Cars (Tokidoki)",
-  thumbnail: getThumbnailPath("SUSHI CARS.png"),
-},
-{
-  src: "https://www.youtube.com/shorts/0f7Mzbk4xEA",
-  title: "Aang (Paramount)",
-  thumbnail: getThumbnailPath("AANG.png"),
-},
+                      {
+                        src: "https://www.youtube.com/shorts/7u1w2hNAxS0",
+                        title: "Yoda (Lucasfilm)",
+                        thumbnail: getThumbnailPath("YODA.png"),
+                      },
 
+                      {
+                        src: "https://www.youtube.com/shorts/AOvovWvBK98",
+                        title: "Sushi Cars (Tokidoki)",
+                        thumbnail: getThumbnailPath("SUSHI CARS.png"),
+                      },
 
+                      {
+                        src: "https://www.youtube.com/shorts/0f7Mzbk4xEA",
+                        title: "Aang (Paramount)",
+                        thumbnail: getThumbnailPath("AANG.png"),
+                      },
 
+                      {
+                        src: "https://www.youtube.com/watch?v=saoC2gPbAu8",
+                        title: "Predator (20th Century Studios)",
+                        thumbnail: getThumbnailPath("PREDATOR.png"),
+                      },
 
-{
-  src: "https://www.youtube.com/watch?v=saoC2gPbAu8",
-  title: "Predator (20th Century Studios)",
-  thumbnail: getThumbnailPath("PREDATOR.png"),
-},
-
-{
-                        src: "https://youtu.be/9ZeA7w5UeEw?si=l6R4iz8qBFG7E4br",
+                      {
+                        src: "https://www.youtube.com/watch?v=9ZeA7w5UeEw",
                         title: "Coca-Cola Neon Signs (Coca-Cola)",
                         thumbnail: getThumbnailPath("COCA COLA NEON.png"),
                       },
 
-
-
-{
-  src: "https://www.youtube.com/shorts/RUUrrFMzSr4",
-  title: "Emma Frost (Marvel)",
-  thumbnail: getThumbnailPath("EMMA FROST.png"),
-},
-
-{
-  src: "https://www.youtube.com/watch?v=pdnoHieezgQ",
-  title: "Boba Fett (Lucasfilm)",
-  thumbnail: getThumbnailPath("BOBA FETT.png"),
-},
-{
-  src: "https://www.youtube.com/shorts/aO2xmKnGVRU",
-  title: "Cartenon Temple (Solo Leveling Animation Partners)",
-  thumbnail: getThumbnailPath("CARTENON TEMPLE.png"),
-},
-
-{
-  src: "https://www.youtube.com/shorts/BKkTcgF-UOE",
-  title: "Spider-Man Villains (Marvel)",
-  thumbnail: getThumbnailPath("SM VILLAINS.png"),
-},
-
-
-{
-  src: "https://www.youtube.com/shorts/q5yJJq5X1-s",
-  title: "Hellfire Gala (Marvel)",
-  thumbnail: getThumbnailPath("HELLFIRE GALA.png"),
-},
-{
-  src: "https://www.youtube.com/shorts/vqbcBov0pPk",
-  title: "AR Update (VeVe)",
-  thumbnail: getThumbnailPath("AR UPDATE.png"),
-},
-
-{
-  src: "https://www.youtube.com/shorts/2tm0Gph4_k4",
-  title: "Millennium Falcon (Lucasfilm)",
-  thumbnail: getThumbnailPath("MILLENNIUM FALCON.png"),
-},
-
-{
-  src: "https://www.youtube.com/shorts/Gm_OMAf2Z00",
-  title: "Splinter (Paramount)",
-  thumbnail: getThumbnailPath("SPLINTER.png"),
-},
-
+                      {
+                        src: "https://www.youtube.com/shorts/RUUrrFMzSr4",
+                        title: "Emma Frost (Marvel)",
+                        thumbnail: getThumbnailPath("EMMA FROST.png"),
+                      },
 
                       {
-                        src: "https://youtu.be/XNyzzivphA0?si=VkcTfFepL48gyq7U",
+                        src: "https://www.youtube.com/watch?v=pdnoHieezgQ",
+                        title: "Boba Fett (Lucasfilm)",
+                        thumbnail: getThumbnailPath("BOBA FETT.png"),
+                      },
+
+                      {
+                        src: "https://www.youtube.com/shorts/aO2xmKnGVRU",
+                        title:
+                          "Cartenon Temple (Solo Leveling Animation Partners)",
+                        thumbnail: getThumbnailPath("CARTENON TEMPLE.png"),
+                      },
+
+                      {
+                        src: "https://www.youtube.com/shorts/BKkTcgF-UOE",
+                        title: "Spider-Man Villains (Marvel)",
+                        thumbnail: getThumbnailPath("SM VILLAINS.png"),
+                      },
+
+                      {
+                        src: "https://www.youtube.com/shorts/q5yJJq5X1-s",
+                        title: "Hellfire Gala (Marvel)",
+                        thumbnail: getThumbnailPath("HELLFIRE GALA.png"),
+                      },
+
+                      {
+                        src: "https://www.youtube.com/shorts/vqbcBov0pPk",
+                        title: "AR Update (VeVe)",
+                        thumbnail: getThumbnailPath("AR UPDATE.png"),
+                      },
+
+                      {
+                        src: "https://www.youtube.com/shorts/2tm0Gph4_k4",
+                        title: "Millennium Falcon (Lucasfilm)",
+                        thumbnail: getThumbnailPath("MILLENNIUM FALCON.png"),
+                      },
+
+                      {
+                        src: "https://www.youtube.com/shorts/Gm_OMAf2Z00",
+                        title: "Splinter (Paramount)",
+                        thumbnail: getThumbnailPath("SPLINTER.png"),
+                      },
+
+                      {
+                        src: "https://youtu.be/XNyzzivphA0",
                         title: "Avatar – Jake Sully (20th Century Studios)",
                         thumbnail: getThumbnailPath("AVATAR JAKE.png"),
                       },
 
                       {
-  src: "https://www.youtube.com/shorts/MQB-_83vTwc",
-  title: "BB-8 (Lucasfilm)",
-  thumbnail: getThumbnailPath("BB 8.png"),
-},
-                      
+                        src: "https://www.youtube.com/shorts/MQB-_83vTwc",
+                        title: "BB-8 (Lucasfilm)",
+                        thumbnail: getThumbnailPath("BB 8.png"),
+                      },
+
                       {
-                        src: "https://youtu.be/xHwW5erIGc0?si=wgpwiQQOSeQr7kbE",
+                        src: "https://youtu.be/xHwW5erIGc0",
                         title: "TMNT Michelangelo (Paramount)",
                         thumbnail: getThumbnailPath("MICHELANGELO.png"),
                       },
+
                       {
-                        src: "https://youtu.be/Vy82H3ZZ--w?si=Qj3av0PGxDxNJbc_",
+                        src: "https://youtu.be/Vy82H3ZZ--w",
                         title: "Death Troopers (Lucasfilm)",
                         thumbnail: getThumbnailPath("DEATH TROOPER.png"),
                       },
-                      
-                        {
+
+                      {
                         src: "https://www.youtube.com/embed/SkQvXUyHltY",
                         title: "Human Torch (Marvel)",
                         thumbnail: getThumbnailPath("HUMAN TORCH.png"),
                       },
-                      
+
                       {
-                        src: "https://youtu.be/AP2hpEiVMeA?si=5Dh7px4c3JarhKHq",
+                        src: "https://youtu.be/AP2hpEiVMeA",
                         title: "Tiger (Ducobi)",
                         thumbnail: getThumbnailPath("DUCOBI.png"),
                       },
+
                       {
-                        src: "https://youtube.com/shorts/PtZG4vxK3w8?si=xl7NOWIMX15jNtRh",
+                        src: "https://youtube.com/shorts/PtZG4vxK3w8",
                         title: "Nozzle Eye (Nick Walker)",
                         thumbnail: getThumbnailPath("NOZZLE EYE.png"),
                       },
+
                       {
-                        src: "https://youtube.com/shorts/CKsqxxbc8Z4?si=9CHaF4SkzzVMeaaH",
+                        src: "https://youtube.com/shorts/CKsqxxbc8Z4",
                         title: "NOUNish Friends S2 (Bigshot Toyworks)",
                         thumbnail: getThumbnailPath("NOUNS S2.png"),
                       },
+
                       {
-                        src: "https://youtu.be/gPX9vVmyckQ?si=VzC8JNLmc-lNSpdg",
+                        src: "https://youtu.be/gPX9vVmyckQ",
                         title: "TMNT Leonardo (Paramount)",
                         thumbnail: getThumbnailPath("LEONARDO.png"),
                       },
+
                       {
-                        src: "https://youtube.com/shorts/CqVbc3M2HCY?si=8eH4LryET-f4ocwX",
+                        src: "https://youtube.com/shorts/CqVbc3M2HCY",
                         title: "Reverspective S3 (Patrick Hughes)",
                         thumbnail: getThumbnailPath("REVERSPECTIVE S3.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/watch?v=YGncfA-rTwE",
                         title: "Spider-Man 2099 S2 (Marvel)",
                         thumbnail: getThumbnailPath("SPIDERMAN 2099 S2.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/watch?v=AhjKfwsKTSA",
                         title: "Bone Appetite (Matt Gondek)",
                         thumbnail: getThumbnailPath("BONE APPETITE.png"),
                       },
+
                       {
-                        src: "https://youtu.be/uemb8T98388?si=j9cdqY8Fd_vOOrLV",
+                        src: "https://youtu.be/uemb8T98388",
                         title: "Kaiju Monsters (Tsuburaya Productions)",
                         thumbnail: getThumbnailPath("KAIJU MONSTERS.png"),
                       },
 
                       // --- Existing thumbnails ---
+
                       {
                         src: "https://www.youtube.com/embed/DiXbJRhean0",
                         title: "AT-AT (Lucasfilm)",
                         thumbnail: getThumbnailPath("AT-AT.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/yNlSswKTSXI",
                         title: "Bad Kitten Club (Cosmic Debris)",
                         thumbnail: getThumbnailPath("BAD KITTEN.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/VBBt7UDGQY0",
-                        title: "Fantastic Four S2 - Marvel Mightys (Marvel)",
+                        title:
+                          "Fantastic Four S2 - Marvel Mightys (Marvel)",
                         thumbnail: getThumbnailPath("FF MIGHTYS.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/0escAMEUJ5I",
                         title: "Darth Vader - Samurai (Lucasfilm)",
                         thumbnail: getThumbnailPath("DARTH SAMURAI.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/H7UJp-sJC8Y",
                         title: "Buzz Lightyear (Disney/Pixar)",
                         thumbnail: getThumbnailPath("BUZZ LIGHTYEAR.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/_gkJQd7A2oQ",
                         title: "Edward Kenway (Ubisoft)",
                         thumbnail: getThumbnailPath("EDWARD KENWAY.png"),
                       },
-                    
+
                       {
                         src: "https://www.youtube.com/embed/REh1in188Dg",
                         title: "Emily the Strange (Cosmic Debris)",
                         thumbnail: getThumbnailPath("EMILY STRANGE.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/O5tNo-Btel4",
                         title: "EMI (Tsuburaya Productions)",
                         thumbnail: getThumbnailPath("KAIJU EMI.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/5XB9Fc1AH7c",
                         title: "Maserati Alfieri (Maserati)",
                         thumbnail: getThumbnailPath("MASERATI ALFIERI.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/z36gu46aE0g",
                         title: "The Count (Sesame Street)",
                         thumbnail: getThumbnailPath("THE COUNT.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/CeRx-Wf0AMo",
                         title: "Ultraman (Tsuburaya Productions)",
                         thumbnail: getThumbnailPath("ULTRAMAN.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/xAISsdQDE5k",
                         title: "Winter Soldier (Marvel)",
                         thumbnail: getThumbnailPath("WINTER SOLDIER.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/VSUEDsCkmBA",
                         title: "Kawaii Princess Warriors (Tokidoki)",
                         thumbnail: getThumbnailPath("KAWAII PRINCESS.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/MLWe2OgtGf4",
                         title: "The P Series (TOBEY)",
                         thumbnail: getThumbnailPath("TOBEY.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/UFhxAUJnUJ8",
                         title: "Gambit (Marvel)",
                         thumbnail: getThumbnailPath("GAMBIT.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/6xLust8bNlA",
                         title: "Daredevil (Marvel)",
                         thumbnail: getThumbnailPath("DAREDEVIL.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/EYjHqqRwLOc",
                         title: "Podracers (Lucasfilm)",
                         thumbnail: getThumbnailPath("PODRACER.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/9e5JqWNFJoM",
                         title: "Potball (COOLRAIN)",
                         thumbnail: getThumbnailPath("POTBALL.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/u9WhHFJqg6Y",
                         title: "Stormtrooper Helmets (Lucasfilm)",
                         thumbnail: getThumbnailPath("STORMTROOPER HELMET.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/lH59K3FeWsQ",
                         title: "Cookie Monster (Sesame Street)",
                         thumbnail: getThumbnailPath("COOKIE.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/SeIk0LgwZsQ",
                         title: "RUNNING MON (Hands in Factory)",
                         thumbnail: getThumbnailPath("RUNNING MON.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/e6r0bFvP8wE",
                         title: "How to Read AR Comics (Marvel)",
                         thumbnail: getThumbnailPath("HOW TO AR COMICS.png"),
                       },
+
                       {
                         src: "https://www.youtube.com/embed/cnMkGWLxnS8",
                         title: "Introduction to the VeVeVerse (VeVe)",
@@ -343,6 +374,9 @@ export default function App() {
                       },
                     ]}
                   />
+
+                  {/* --- Testimonial --- */}
+                  <Testimonial />
                 </main>
               </>
             }
@@ -361,7 +395,7 @@ export default function App() {
   );
 }
 
-/* ✅ Intro text with fade-in (no rise) + scroll fade-out */
+/* Hero text with fade-in and scroll fade-out */
 function IntroText() {
   const [opacity, setOpacity] = useState(1);
 
@@ -372,16 +406,19 @@ function IntroText() {
       const fadeEnd = 530;
 
       let newOpacity = 1;
+
       if (scrollTop > fadeStart) {
         newOpacity = Math.max(
           0,
           1 - (scrollTop - fadeStart) / (fadeEnd - fadeStart)
         );
       }
+
       setOpacity(newOpacity);
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -412,7 +449,7 @@ function IntroText() {
   );
 }
 
-/* ✅ Unified video grid (3 per row, fullscreen playback) */
+/* Video grid with fullscreen playback */
 function VideoGrid({ videos }) {
   const [activeVideo, setActiveVideo] = useState(null);
 
@@ -423,11 +460,16 @@ function VideoGrid({ videos }) {
           <div
             key={idx}
             className={`overflow-hidden rounded-xl transition-transform duration-300 shadow-2xl ${
-              vid.src ? "cursor-pointer hover:scale-[1.02]" : "cursor-default"
+              vid.src
+                ? "cursor-pointer hover:scale-[1.02]"
+                : "cursor-default"
             }`}
             onClick={() => {
               const embed = toYouTubeEmbedUrl(vid.src);
-              if (embed) setActiveVideo(`${embed}?autoplay=1`);
+
+              if (embed) {
+                setActiveVideo(`${embed}?autoplay=1`);
+              }
             }}
           >
             <div className="relative group">
@@ -436,6 +478,7 @@ function VideoGrid({ videos }) {
                 alt={vid.title}
                 className="w-full aspect-square object-cover"
               />
+
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-start justify-start">
                 <span className="opacity-0 group-hover:opacity-100 text-white text-xs sm:text-sm font-rubik font-light m-3 transition-opacity duration-300">
                   {vid.title}
@@ -472,6 +515,26 @@ function VideoGrid({ videos }) {
           </div>
         </div>
       )}
+    </section>
+  );
+}
+
+/* Testimonial */
+function Testimonial() {
+  return (
+    <section className="max-w-4xl mx-auto px-6 md:px-10 py-24 text-center">
+      <p className="text-lg md:text-xl leading-relaxed italic text-gray-300">
+        “Ben is friendly, solutions focused, pragmatic, creative and delivers
+        to brief with speed and finesse. He has a great sense of humour and is
+        able to take complex concepts, many requirements and make them easy to
+        digest for the audience.”
+      </p>
+
+      <p className="mt-6 text-sm text-gray-400">
+        <span className="font-medium text-white">Renee Tan</span>
+        <br />
+        Digital Marketing
+      </p>
     </section>
   );
 }
