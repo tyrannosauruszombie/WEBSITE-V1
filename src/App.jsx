@@ -124,12 +124,7 @@ export default function App() {
                         thumbnail: getThumbnailPath("BOBA FETT.png"),
                       },
 
-                      {
-                        src: "https://www.youtube.com/shorts/aO2xmKnGVRU",
-                        title:
-                          "Cartenon Temple (Solo Leveling Animation Partners)",
-                        thumbnail: getThumbnailPath("CARTENON TEMPLE.png"),
-                      },
+                    
 
                       {
                         src: "https://www.youtube.com/shorts/BKkTcgF-UOE",
@@ -137,11 +132,7 @@ export default function App() {
                         thumbnail: getThumbnailPath("SM VILLAINS.png"),
                       },
 
-                      {
-                        src: "https://www.youtube.com/shorts/q5yJJq5X1-s",
-                        title: "Hellfire Gala (Marvel)",
-                        thumbnail: getThumbnailPath("HELLFIRE GALA.png"),
-                      },
+                     
 
                       {
                         src: "https://www.youtube.com/shorts/vqbcBov0pPk",
@@ -167,47 +158,7 @@ export default function App() {
                         thumbnail: getThumbnailPath("AVATAR JAKE.png"),
                       },
 
-                      {
-                        src: "https://www.youtube.com/shorts/MQB-_83vTwc",
-                        title: "BB-8 (Lucasfilm)",
-                        thumbnail: getThumbnailPath("BB 8.png"),
-                      },
-
-                      {
-                        src: "https://youtu.be/xHwW5erIGc0",
-                        title: "TMNT Michelangelo (Paramount)",
-                        thumbnail: getThumbnailPath("MICHELANGELO.png"),
-                      },
-
-                      {
-                        src: "https://youtu.be/Vy82H3ZZ--w",
-                        title: "Death Troopers (Lucasfilm)",
-                        thumbnail: getThumbnailPath("DEATH TROOPER.png"),
-                      },
-
-                      {
-                        src: "https://www.youtube.com/embed/SkQvXUyHltY",
-                        title: "Human Torch (Marvel)",
-                        thumbnail: getThumbnailPath("HUMAN TORCH.png"),
-                      },
-
-                      {
-                        src: "https://youtu.be/AP2hpEiVMeA",
-                        title: "Tiger (Ducobi)",
-                        thumbnail: getThumbnailPath("DUCOBI.png"),
-                      },
-
-                      {
-                        src: "https://youtube.com/shorts/PtZG4vxK3w8",
-                        title: "Nozzle Eye (Nick Walker)",
-                        thumbnail: getThumbnailPath("NOZZLE EYE.png"),
-                      },
-
-                      {
-                        src: "https://youtube.com/shorts/CKsqxxbc8Z4",
-                        title: "NOUNish Friends S2 (Bigshot Toyworks)",
-                        thumbnail: getThumbnailPath("NOUNS S2.png"),
-                      },
+                      
 
                       {
                         src: "https://youtu.be/gPX9vVmyckQ",
@@ -221,11 +172,7 @@ export default function App() {
                         thumbnail: getThumbnailPath("REVERSPECTIVE S3.png"),
                       },
 
-                      {
-                        src: "https://www.youtube.com/watch?v=YGncfA-rTwE",
-                        title: "Spider-Man 2099 S2 (Marvel)",
-                        thumbnail: getThumbnailPath("SPIDERMAN 2099 S2.png"),
-                      },
+                  
 
                       {
                         src: "https://www.youtube.com/watch?v=AhjKfwsKTSA",
@@ -260,11 +207,6 @@ export default function App() {
                         thumbnail: getThumbnailPath("FF MIGHTYS.png"),
                       },
 
-                      {
-                        src: "https://www.youtube.com/embed/0escAMEUJ5I",
-                        title: "Darth Vader - Samurai (Lucasfilm)",
-                        thumbnail: getThumbnailPath("DARTH SAMURAI.png"),
-                      },
 
                       {
                         src: "https://www.youtube.com/embed/H7UJp-sJC8Y",
@@ -278,17 +220,8 @@ export default function App() {
                         thumbnail: getThumbnailPath("EDWARD KENWAY.png"),
                       },
 
-                      {
-                        src: "https://www.youtube.com/embed/REh1in188Dg",
-                        title: "Emily the Strange (Cosmic Debris)",
-                        thumbnail: getThumbnailPath("EMILY STRANGE.png"),
-                      },
+                     
 
-                      {
-                        src: "https://www.youtube.com/embed/O5tNo-Btel4",
-                        title: "EMI (Tsuburaya Productions)",
-                        thumbnail: getThumbnailPath("KAIJU EMI.png"),
-                      },
 
                       {
                         src: "https://www.youtube.com/embed/5XB9Fc1AH7c",
@@ -296,29 +229,7 @@ export default function App() {
                         thumbnail: getThumbnailPath("MASERATI ALFIERI.png"),
                       },
 
-                      {
-                        src: "https://www.youtube.com/embed/z36gu46aE0g",
-                        title: "The Count (Sesame Street)",
-                        thumbnail: getThumbnailPath("THE COUNT.png"),
-                      },
-
-                      {
-                        src: "https://www.youtube.com/embed/CeRx-Wf0AMo",
-                        title: "Ultraman (Tsuburaya Productions)",
-                        thumbnail: getThumbnailPath("ULTRAMAN.png"),
-                      },
-
-                      {
-                        src: "https://www.youtube.com/embed/xAISsdQDE5k",
-                        title: "Winter Soldier (Marvel)",
-                        thumbnail: getThumbnailPath("WINTER SOLDIER.png"),
-                      },
-
-                      {
-                        src: "https://www.youtube.com/embed/VSUEDsCkmBA",
-                        title: "Kawaii Princess Warriors (Tokidoki)",
-                        thumbnail: getThumbnailPath("KAWAII PRINCESS.png"),
-                      },
+          
 
                       {
                         src: "https://www.youtube.com/embed/MLWe2OgtGf4",
@@ -326,11 +237,7 @@ export default function App() {
                         thumbnail: getThumbnailPath("TOBEY.png"),
                       },
 
-                      {
-                        src: "https://www.youtube.com/embed/UFhxAUJnUJ8",
-                        title: "Gambit (Marvel)",
-                        thumbnail: getThumbnailPath("GAMBIT.png"),
-                      },
+                  
 
                       {
                         src: "https://www.youtube.com/embed/6xLust8bNlA",
@@ -350,11 +257,7 @@ export default function App() {
                         thumbnail: getThumbnailPath("POTBALL.png"),
                       },
 
-                      {
-                        src: "https://www.youtube.com/embed/u9WhHFJqg6Y",
-                        title: "Stormtrooper Helmets (Lucasfilm)",
-                        thumbnail: getThumbnailPath("STORMTROOPER HELMET.png"),
-                      },
+                    
 
                       {
                         src: "https://www.youtube.com/embed/lH59K3FeWsQ",
