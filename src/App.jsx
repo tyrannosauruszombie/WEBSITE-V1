@@ -106,16 +106,30 @@ export default function App() {
                         thumbnail: getThumbnailPath("COCA COLA NEON.png"),
                       },
 
+                    
+
                       {
+                        src: "https://www.youtube.com/shorts/CMiggvoF_to",
+                        title: "Schoony Interview (Schoony Art Studios)",
+                        thumbnail: getThumbnailPath("SCHOONY.png"),
+                      },
+
+                       {
+                        src: "https://youtu.be/XNyzzivphA0",
+                        title: "Avatar – Jake Sully (20th Century Studios)",
+                        thumbnail: getThumbnailPath("AVATAR JAKE.png"),
+                      },
+
+                       {
                         src: "https://www.youtube.com/shorts/RUUrrFMzSr4",
                         title: "Emma Frost (Marvel)",
                         thumbnail: getThumbnailPath("EMMA FROST.png"),
                       },
 
                       {
-                        src: "https://www.youtube.com/shorts/CMiggvoF_to",
-                        title: "Schoony Interview (Schoony Art Studios)",
-                        thumbnail: getThumbnailPath("SCHOONY.png"),
+                        src: "https://www.youtube.com/shorts/vqbcBov0pPk",
+                        title: "AR Update (VeVe)",
+                        thumbnail: getThumbnailPath("AR UPDATE.png"),
                       },
 
                       {
@@ -134,11 +148,7 @@ export default function App() {
 
                      
 
-                      {
-                        src: "https://www.youtube.com/shorts/vqbcBov0pPk",
-                        title: "AR Update (VeVe)",
-                        thumbnail: getThumbnailPath("AR UPDATE.png"),
-                      },
+                      
 
                       {
                         src: "https://www.youtube.com/shorts/2tm0Gph4_k4",
@@ -152,11 +162,7 @@ export default function App() {
                         thumbnail: getThumbnailPath("SPLINTER.png"),
                       },
 
-                      {
-                        src: "https://youtu.be/XNyzzivphA0",
-                        title: "Avatar – Jake Sully (20th Century Studios)",
-                        thumbnail: getThumbnailPath("AVATAR JAKE.png"),
-                      },
+                      
 
                       
 
