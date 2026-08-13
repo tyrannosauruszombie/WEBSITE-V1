@@ -113,6 +113,12 @@ export default function App() {
                       },
 
                       {
+                        src: "https://www.youtube.com/shorts/CMiggvoF_to",
+                        title: "Schoony Interview (Schoony Art Studios)",
+                        thumbnail: getThumbnailPath("SCHOONY.png"),
+                      },
+
+                      {
                         src: "https://www.youtube.com/watch?v=pdnoHieezgQ",
                         title: "Boba Fett (Lucasfilm)",
                         thumbnail: getThumbnailPath("BOBA FETT.png"),
