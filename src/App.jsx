@@ -121,15 +121,21 @@ export default function App() {
                       },
 
                        {
+                        src: "https://www.youtube.com/shorts/vqbcBov0pPk",
+                        title: "AR Update (VeVe)",
+                        thumbnail: getThumbnailPath("AR UPDATE.png"),
+                      },
+
+                       {
                         src: "https://www.youtube.com/shorts/RUUrrFMzSr4",
                         title: "Emma Frost (Marvel)",
                         thumbnail: getThumbnailPath("EMMA FROST.png"),
                       },
 
-                      {
-                        src: "https://www.youtube.com/shorts/vqbcBov0pPk",
-                        title: "AR Update (VeVe)",
-                        thumbnail: getThumbnailPath("AR UPDATE.png"),
+                     {
+                        src: "https://www.youtube.com/shorts/Gm_OMAf2Z00",
+                        title: "Splinter (Paramount)",
+                        thumbnail: getThumbnailPath("SPLINTER.png"),
                       },
 
                       {
@@ -156,11 +162,7 @@ export default function App() {
                         thumbnail: getThumbnailPath("MILLENNIUM FALCON.png"),
                       },
 
-                      {
-                        src: "https://www.youtube.com/shorts/Gm_OMAf2Z00",
-                        title: "Splinter (Paramount)",
-                        thumbnail: getThumbnailPath("SPLINTER.png"),
-                      },
+                      
 
                       
 
